@@ -1,16 +1,5 @@
 {
   
-    
-        "post0": {
-            "title": "Unit 3 Section 16 Outline",
-            "content": "What college board expects . .",
-            "url": "https://shruthim0.github.io/datapirates/2022/12/12/lessonoutline.html",
-            "relUrl": "/2022/12/12/lessonoutline.html",
-            "date": " • Dec 12, 2022"
-        }
-        
-    
-  
 
   
   
@@ -18,28 +7,6 @@
   
 
   
-
-  
-      ,"page3": {
-          "title": "Fantastic Food Finder",
-          "content": "Fantastic Food Finder . Plan your next meals! Get recipes everyday based on what food you feel like eating! . . Please select a meal type: Breakfast Lunch Dinner Dessert Please select a Cuisine type: Chinese Italian Indian Mexican American Recipe Type: Breakfast Lunch Dinner Dessert Recipe Cuisine: Chinese Italian Indian Mexican American Recipe Name: Recipe Link: .",
-          "url": "https://shruthim0.github.io/datapirates/_pages/finalmealsearch.html",
-          "relUrl": "/_pages/finalmealsearch.html",
-          "date": ""
-      }
-      
-  
-
-  
-
-  
-  
-
-  
-
-  
-  
-
   
 
   
@@ -57,7 +24,10 @@
   
 
   
-      ,"page14": {
+  
+
+  
+      "page9": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://shruthim0.github.io/datapirates/robots.txt",
