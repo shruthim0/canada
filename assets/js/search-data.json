@@ -1,0 +1,81 @@
+{
+  
+    
+        "post0": {
+            "title": "Unit 3 Section 16 Outline",
+            "content": "What college board expects . .",
+            "url": "https://shruthim0.github.io/datapirates/2022/12/12/lessonoutline.html",
+            "relUrl": "/2022/12/12/lessonoutline.html",
+            "date": " • Dec 12, 2022"
+        }
+        
+    
+  
+    
+        ,"post1": {
+            "title": "Unit 3 Lesson 16, Student Copy",
+            "content": "Hack #1 - Class Notes . Write any extra notes you have here . Hack #2 - Functions Classwork . . Hack #3 - Binary Simulation Problem . import random def randomnum(): # function for generating random int def converttobin(n): # function for converting decimal to binary def survivors(binary): # function to assign position survivorstatus = [&quot;Jiya&quot;, &quot;Shruthi&quot;, &quot;Noor&quot;, &quot;Ananya&quot; , &quot;Peter Parker&quot;, &quot;Andrew Garfield&quot;, &quot;Tom Holland&quot;, &quot;Tobey Maguire&quot;] # replace the names above with your choice of people in the house . Hack #4 - Thinking through a problem . create your own simulation involving a dice roll | should include randomization and a function for rolling + multiple trials | . Hack 5 - Applying your knowledge to situation based problems . Using the questions bank below, create a quiz that presents the user a random question and calculates the user&#39;s score. You can use the template below or make your own. Making your own using a loop can give you extra points. . A researcher gathers data about the effect of Advanced Placement®︎ classes on students&#39; success in college and career, and develops a simulation to show how a sequence of AP classes affect a hypothetical student&#39;s pathway.Several school administrators are concerned that the simulation contains bias favoring high-income students, however. answer options: The simulation is an abstraction and therefore cannot contain any bias | The simulation may accidentally contain bias due to the exclusion of details. | If the simulation is found to contain bias, then it is not possible to remove the bias from the simulation. | The only way for the simulation to be biased is if the researcher intentionally used data that favored their desired output. | | . | Jack is trying to plan his financial future using an online tool. The tool starts off by asking him to input details about his current finances and career. It then lets him choose different future scenarios, such as having children. For each scenario chosen, the tool does some calculations and outputs his projected savings at the ages of 35, 45, and 55.Would that be considered a simulation and why? answer options No, it&#39;s not a simulation because it does not include a visualization of the results. | No, it&#39;s not a simulation because it does not include all the details of his life history and the future financial environment. | Yes, it&#39;s a simulation because it runs on a computer and includes both user input and computed output. | Yes, it&#39;s a simulation because it is an abstraction of a real world scenario that enables the drawing of inferences. | | . | Sylvia is an industrial engineer working for a sporting goods company. She is developing a baseball bat that can hit balls with higher accuracy and asks their software engineering team to develop a simulation to verify the design.Which of the following details is most important to include in this simulation? answer options Realistic sound effects based on the material of the baseball bat and the velocity of the hit | A depiction of an audience in the stands with lifelike behavior in response to hit accuracy | Accurate accounting for the effects of wind conditions on the movement of the ball | A baseball field that is textured to differentiate between the grass and the dirt | | . | Ashlynn is an industrial engineer who is trying to design a safer parachute. She creates a computer simulation of the parachute opening at different heights and in different environmental conditions.What are advantages of running the simulation versus an actual experiment? answer options The simulation will not contain any bias that favors one body type over another, while an experiment will be biased. | The simulation can be run more safely than an actual experiment | The simulation will accurately predict the parachute&#39;s safety level, while an experiment may be inaccurate due to faulty experimental design. | The simulation can test the parachute design in a wide range of environmental conditions that may be difficult to reliably reproduce in an experiment. | | this question has 2 correct answers | . | YOUR OWN QUESTION; can be situational, pseudo code based, or vocab/concept based | YOUR OWN QUESTION; can be situational, pseudo code based, or vocab/concept based | questions = 6 correct = 0 Q1 = input() if Q1 == : Q2 = input() if Q2 == : Q3 = input() if Q3 == : Q4 = input() print( &quot; you scored &quot; + str(correct) +&quot;/&quot; + str(questions)) . Hack #6 / Challenge - Taking real life problems and implementing them into code . Create your own simulation based on your experiences/knowledge! Be creative! Think about instances in your own life, science, puzzles that can be made into simulations . Some ideas to get your brain running: A simulation that breeds two plants and tells you phenotypes of offspring, an adventure simulation... .",
+            "url": "https://shruthim0.github.io/datapirates/2022/12/12/hw.html",
+            "relUrl": "/2022/12/12/hw.html",
+            "date": " • Dec 12, 2022"
+        }
+        
+    
+  
+
+  
+  
+
+  
+
+  
+
+  
+      ,"page3": {
+          "title": "Fantastic Food Finder",
+          "content": "Fantastic Food Finder . Plan your next meals! Get recipes everyday based on what food you feel like eating! . . Please select a meal type: Breakfast Lunch Dinner Dessert Please select a Cuisine type: Chinese Italian Indian Mexican American Recipe Type: Breakfast Lunch Dinner Dessert Recipe Cuisine: Chinese Italian Indian Mexican American Recipe Name: Recipe Link: .",
+          "url": "https://shruthim0.github.io/datapirates/_pages/finalmealsearch.html",
+          "relUrl": "/_pages/finalmealsearch.html",
+          "date": ""
+      }
+      
+  
+
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+      ,"page14": {
+          "title": "",
+          "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
+          "url": "https://shruthim0.github.io/datapirates/robots.txt",
+          "relUrl": "/robots.txt",
+          "date": ""
+      }
+      
+  
+
+}
