@@ -1,0 +1,349 @@
+---
+layout: base
+permalink: /Nutrition Wizard/
+title: Nutrition Wizard
+search_exclude: true
+---
+
+
+
+
+<html>
+<head>
+<style>
+body {
+  background-color: #FFF8DC;
+}
+
+div.container {
+background-color:#FF7F50;
+}
+div.container p {
+font-family: Georgia;
+font-size: 50px;
+font-style: normal;
+text-align: center;
+font-weight: normal;
+text-decoration: underline;
+text-transform: none;
+color: #ffffff;
+background-color: #DC143C;
+}
+div.container h5 {
+text-align: center;
+font-family: Georgia;
+}
+
+.button {
+  background-color: #37FA90;
+  border: none;
+  color: white;
+  padding: 15px 64px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 35px;
+  margin: 115px 265px;
+  cursor: pointer;
+}
+</style>
+
+<title>Nutrition Wizard</title>
+
+</head>
+<body>
+<div class="container">
+<p>＊˚*•̩̩͙✩•̩̩͙*˚Nutrition Wizard˚*•̩̩͙✩•̩̩͙*˚＊</p>
+<h5>“One cannot think well, love well, sleep well if one has not dined well.”</h5>
+<h5>🥗Enter any ingredients and get the nutrition facts🥗</h5>
+<h5>Don't forget to vote!</h5>
+</div>
+
+<br />
+<br />
+
+<div>
+<form id="nutritionform">
+  <h4>Please enter the ingredients and their amount (make sure to separate with comma):</h4>
+  <textarea id="input" rows="7" cols="125"></textarea>
+</form>
+
+<br />
+
+<button class="button" onclick="analyze()">⭒❃Analyze❃⭒</button>
+</div>
+
+<div id="result">
+</div>
+
+<script>
+function analyze() {
+  const input = document.getElementById("input").value;
+  const url = `https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=${input}`;
+  const headers = {
+    "X-RapidAPI-Host": "edamam-edamam-nutrition-analysis.p.rapidapi.com",
+    "X-RapidAPI-Key": "2d79bbde22mshed34d34c65d8472p1365cejsn7594c6e54840"
+  };
+
+  fetch(url, {
+    method: "GET",
+    headers: headers
+  })
+    .then(response => response.json())
+    .then(data => {
+      const nutrients = data.totalNutrients;
+      const result = document.getElementById("result");
+      result.innerHTML = "";
+
+      for (let nutrient in nutrients) {
+        const nutrientDiv = document.createElement("div");
+        nutrientDiv.innerHTML = `${nutrients[nutrient].label}: ${nutrients[nutrient].quantity.toFixed(2)} ${nutrients[nutrient].unit}`;
+        result.appendChild(nutrientDiv);
+      }
+    });
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nutrition Wizard</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#nutritionbutton").submit(function(e) {
+				e.preventDefault(); // prevent the form from submitting normally
+				var ingredients = $("#ingredients").val(); // get the value of the ingredients textarea
+				var url = "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data"; // API endpoint URL
+				var api_key = "afae82f074msh729fe72b128081fp1f40f4jsn36bd559b1ce4"; // API key
+				$.ajax({
+					url: url,
+					type: "POST",
+					headers: {
+						"X-RapidAPI-Host": "edamam-edamam-nutrition-analysis.p.rapidapi.com",
+						"X-RapidAPI-Key": api_key,
+						"Content-Type": "application/json"
+					},
+					data: JSON.stringify({
+						"ingr": ingredients.split(",")
+					}),
+					success: function(response) {
+						// add the nutrition data to the table.
+						$("#nutritionTable").append("<tr><td>" + response.calories + "</td><td>" + response.totalNutrients.FAT.quantity + " " + response.totalNutrients.FAT.unit + "</td><td>" + response.totalNutrients.CHOCDF.quantity + " " + response.totalNutrients.CHOCDF.unit + "</td><td>" + response.totalNutrients.PROCNT.quantity + " " + response.totalNutrients.PROCNT.unit + "</td></tr>");
+					},
+					error: function(xhr, status, error) {
+						console.log("Error: " + error);
+					}
+				});
+			});
+		});
+  </script>
+    <title>Food Item Table</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        text-align: left;
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Food Item Table</h1>
+    <form onsubmit="addFoodItem(event)">
+      <label for="food-item">Food Item:</label>
+      <input type="text" id="food-item" name="food-item" required>
+      <label for="calories">Calories:</label>
+      <input type="text" id="calories" name="calories" required>
+      <input type="submit" value="Add Food Item">
+    </form>
+    <table id="food-table">
+      <thead>
+        <tr>
+          <th>Food Item</th>
+          <th>Calories</th>
+        </tr>
+      </thead>
+      <tbody id="food-table-body">
+      </tbody>
+    </table>
+    <script>
+      function addFoodItem(event) {
+        event.preventDefault();
+        const foodItemInput = document.getElementById("food-item");
+        const caloriesInput = document.getElementById("calories");
+        const foodTableBody = document.getElementById("food-table-body");
+        const foodItem = foodItemInput.value;
+        const calories = caloriesInput.value;
+        const row = document.createElement("tr");
+        const foodItemCell = document.createElement("td");
+        const caloriesCell = document.createElement("td");
+        foodItemCell.appendChild(document.createTextNode(foodItem));
+        caloriesCell.appendChild(document.createTextNode(calories));
+        row.appendChild(foodItemCell);
+        row.appendChild(caloriesCell);
+        foodTableBody.appendChild(row);
+        foodItemInput.value = "";
+        caloriesInput.value = "";
+      }
+    </script>
+  </body>
+</html>
+
+<iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/206903676&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+
+
+
+
+
+<script>
+  // prepare HTML result container for new output
+  const resultContainer = document.getElementById("result");
+  // prepare URL's to allow easy switch from deployment and localhost
+  var url = "https://fresh4all.duckdns.org/api/nutritions"
+  // const url = "http://172.22.163.243:8086/api/nutritions"
+  const create_fetch = url + '/create';
+  const read_fetch = url + '/';
+
+  // Load users on buttonclick event
+  
+  read_users();
+
+  // Display User Table, data is fetched from Backend Database
+  function read_users() {
+    // prepare fetch options
+    const read_options = {
+      method: 'GET', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'default', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'omit', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    };
+
+    // fetch the data from API
+    fetch(read_fetch, read_options)
+      // response is a RESTful "promise" on any successful fetch
+      .then(response => {
+        // check for response errors
+        if (response.status !== 200) {
+            const errorMsg = 'Database read error: ' + response.status;
+            console.log(errorMsg);
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.innerHTML = errorMsg;
+            tr.appendChild(td);
+            resultContainer.appendChild(tr);
+            return;
+        }
+        // valid response will have json data
+        response.json().then(data => {
+            console.log(data);
+            for (let row in data) {
+              console.log(data[row]);
+              add_row(data[row]);
+            }
+        })
+    })
+    
+    // catch fetch errors (ie ACCESS to server blocked)
+    .catch(err => {
+      console.error(err);
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.innerHTML = err;
+      tr.appendChild(td);
+      resultContainer.appendChild(tr);
+    });
+  }
+
+  function create_user(){
+    //Validate Password (must be 6-20 characters in len)
+    //verifyPassword("click");
+    const body = {
+      nutritionname: document.getElementById("nutritionname").value,
+      nutritioncalories: document.getElementById("nutritioncalories").value,
+      nutritionfat: document.getElementById("nutritionfat").value,
+      nutritioncarbs: document.getElementById("nutritioncarbs").value,
+
+    };
+    const requestOptions = {
+        method: 'POST',
+        body: JSON.stringify(body),
+        headers: {
+            "content-type": "application/json",
+            'Authorization': 'Bearer my-token',
+        },
+    };
+
+    // URL for Create API
+    // Fetch API call to the database to create a new user
+    fetch(create_fetch, requestOptions)
+      .then(response => {
+        // trap error response from Web API
+        if (response.status !== 200) {
+          const errorMsg = 'Database create error: ' + response.status;
+          console.log(errorMsg);
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.innerHTML = errorMsg;
+          tr.appendChild(td);
+          resultContainer.appendChild(tr);
+          return
+        }
+        // response contains valid result
+        response.json().then(data => {
+            console.log(data);
+            //add a table row for the new/created
+            add_row(data);
+        })
+    })
+    
+  }
+  </script>
