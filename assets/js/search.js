@@ -47,7 +47,7 @@ jtd.onReady = function(ready) {
 
 function initSearch() {
     var request = new XMLHttpRequest();
-    request.open('GET', '/datapirates/assets/js/search-data.json', true);
+    request.open('GET', '/canada/assets/js/search-data.json', true);
   
     request.onload = function(){
       if (request.status >= 200 && request.status < 400) {
