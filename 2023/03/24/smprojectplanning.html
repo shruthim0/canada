@@ -79,7 +79,7 @@ window.onload = wrap_img;
        • <span class="read-time" title="Estimated read time">
     
     
-      3 min read
+      2 min read
     
 </span></p>
 
@@ -325,6 +325,13 @@ daysStarving ← daysStarving + 1
 </li>
 </ul>
 </li>
+<li>Additions we would add<ul>
+<li>specific data on beak size/wing length/height<ul>
+<li>so for certain disaster, wing legnths &gt; 5.5 survived</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -339,15 +346,15 @@ daysStarving ← daysStarving + 1
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
-<span class="n">phenotypes</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s2">&quot;beak&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;small beak&quot;</span><span class="p">,</span><span class="s2">&quot;long beak&quot;</span><span class="p">,</span> <span class="s2">&quot;medium beak&quot;</span><span class="p">],</span>
-  <span class="s2">&quot;wing&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;small wings&quot;</span><span class="p">,</span> <span class="s2">&quot;large wings&quot;</span><span class="p">,</span> <span class="s2">&quot;medium wings&quot;</span><span class="p">],</span>
-  <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;short&quot;</span><span class="p">,</span> <span class="s2">&quot;tall&quot;</span><span class="p">,</span> <span class="s2">&quot;medium&quot;</span><span class="p">]</span>
-<span class="p">}</span>
+<span class="n">beak</span> <span class="o">=</span>  <span class="p">[</span><span class="s2">&quot;small-beak&quot;</span><span class="p">,</span> <span class="s2">&quot;long-beak&quot;</span><span class="p">,</span> <span class="s2">&quot;medium-beak&quot;</span><span class="p">],</span>
+<span class="n">wing</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;small-wings&quot;</span><span class="p">,</span> <span class="s2">&quot;large-wings&quot;</span><span class="p">,</span> <span class="s2">&quot;medium-wings&quot;</span><span class="p">],</span>
+<span class="n">height</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;short&quot;</span><span class="p">,</span> <span class="s2">&quot;tall&quot;</span><span class="p">,</span><span class="s2">&quot;medium&quot;</span><span class="p">]</span>
+
 
 <span class="n">naturaldisaster</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;flood&quot;</span><span class="p">,</span> <span class="s2">&quot;drought&quot;</span><span class="p">,</span> <span class="s2">&quot;fire&quot;</span><span class="p">,</span> <span class="s2">&quot;hurricane&quot;</span><span class="p">,</span> <span class="s2">&quot;dustbowl&quot;</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;When&quot;</span> <span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">naturaldisaster</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;hit, all birds with&quot;</span> <span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">phenotypes</span><span class="o">.</span><span class="n">values</span><span class="p">())),</span> <span class="s2">&quot;died&quot;</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;When a&quot;</span> <span class="p">,</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">naturaldisaster</span><span class="p">)</span> <span class="p">,</span> <span class="s2">&quot;hit&quot;</span><span class="p">,</span>  <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">height</span><span class="p">),</span> <span class="s2">&quot;birds died&quot;</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -359,20 +366,9 @@ daysStarving ← daysStarving + 1
 
 <div class="output_area">
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb Cell 15</span> in <span class="ansi-cyan-fg">&lt;cell line: 11&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=2&#39;&gt;3&lt;/a&gt;</span> phenotypes = {
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=3&#39;&gt;4&lt;/a&gt;</span>   &#34;beak&#34;: [&#34;small beak&#34;,&#34;long beak&#34;, &#34;medium beak&#34;],
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=4&#39;&gt;5&lt;/a&gt;</span>   &#34;wing&#34;: [&#34;small wings&#34;, &#34;large wings&#34;, &#34;medium wings&#34;],
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=5&#39;&gt;6&lt;/a&gt;</span>   &#34;height&#34;: [&#34;short&#34;, &#34;tall&#34;, &#34;medium&#34;]
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=6&#39;&gt;7&lt;/a&gt;</span> }
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=8&#39;&gt;9&lt;/a&gt;</span> naturaldisaster = [&#34;flood&#34;, &#34;drought&#34;, &#34;fire&#34;, &#34;hurricane&#34;, &#34;dustbowl&#34;]
-<span class="ansi-green-fg">---&gt; &lt;a href=&#39;vscode-notebook-cell://wsl%2Bubuntu/home/shruthim/vscode/canada/_notebooks/2023-03-24-smprojectplanning.ipynb#X16sdnNjb2RlLXJlbW90ZQ%3D%3D?line=10&#39;&gt;11&lt;/a&gt;</span> print(&#34;When&#34; , random.choice(naturaldisaster) , &#34;hit, all birds with&#34; , random.choice(dict(phenotypes.values())), &#34;died&#34;)
-
-<span class="ansi-red-fg">ValueError</span>: dictionary update sequence element #0 has length 3; 2 is required</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>When a drought hit short birds died
+</pre>
 </div>
 </div>
 
