@@ -249,6 +249,46 @@ window.onload = wrap_img;
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Spinning-the-Wheel">Spinning the Wheel<a class="anchor-link" href="#Spinning-the-Wheel"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Spin the wheel!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------------------------&quot;</span><span class="p">)</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">blue</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">red</span> <span class="o">=</span> <span class="mi">0</span>
+ 
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">spin</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">spin</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># head</span>
+        <span class="n">blue</span> <span class="o">=</span> <span class="n">blue</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>         <span class="c1"># tail</span>
+        <span class="n">red</span> <span class="o">=</span> <span class="n">red</span> <span class="o">+</span> <span class="mi">1</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of blue:&#39;</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of red:&#39;</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
 </div>
 
 
