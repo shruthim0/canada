@@ -1,0 +1,48 @@
+---
+layout: base
+permalink: /diceroll/
+title: Dice Roll
+---
+
+<html>
+  <head>
+    <title>Dice Roll</title>
+    <style>
+      .dice {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .dice-container {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dice-container">
+      <div class="dice" id="dice"></div>
+    </div>
+    <button onclick="rollDice()">Roll Dice</button>
+
+    <script>
+      function rollDice() {
+        const faces = [
+          "_pages/dice1.png",
+          "_pages/dice2.png",
+          "_pages/dice3.png",
+          "_pages/dice4.png",
+          "_pages/dice5.png",
+          "_pagesv/dice6.png",
+        ];
+
+        const randomIndex = Math.floor(Math.random() * 6);
+        const dice = document.getElementById("dice");
+        dice.style.backgroundImage = `url(${faces[randomIndex]})`;
+      }
+    </script>
+  </body>
+</html>
