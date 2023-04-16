@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>canada | we love canada</title>
+<title>Dice Roll | canada</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="canada" />
+<meta property="og:title" content="Dice Roll" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="we love canada" />
 <meta property="og:description" content="we love canada" />
-<link rel="canonical" href="https://shruthim0.github.io/canada/404.html" />
-<meta property="og:url" content="https://shruthim0.github.io/canada/404.html" />
+<link rel="canonical" href="https://shruthim0.github.io/canada/diceroll/" />
+<meta property="og:url" content="https://shruthim0.github.io/canada/diceroll/" />
 <meta property="og:site_name" content="canada" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="canada" />
+<meta property="twitter:title" content="Dice Roll" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"we love canada","headline":"canada","url":"https://shruthim0.github.io/canada/404.html"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"we love canada","headline":"Dice Roll","url":"https://shruthim0.github.io/canada/diceroll/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/canada/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://shruthim0.github.io/canada/feed.xml" title="canada" /><link rel="shortcut icon" type="image/x-icon" href="/canada/images/canadalogo.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -69,25 +69,59 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        <html>
+<head>
+	<title>Dice Roll</title>
+	<style>
+		#dice-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.dice {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			background-color: white;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<div id="dice-container">
+		<div class="dice" id="dice1"></div>
+		<div class="dice" id="dice2"></div>
+		<div class="dice" id="dice3"></div>
+		<div class="dice" id="dice4"></div>
+		<div class="dice" id="dice5"></div>
+		<div class="dice" id="dice6"></div>
+	</div>
 
-<div class="container">
-  <h1>404</h1>
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+	<script>
+
+function rollDice() {
+	var dice1 = document.getElementById("dice1");
+	var dice2 = document.getElementById("dice2");
+	var dice3 = document.getElementById("dice3");
+	var dice4 = document.getElementById("dice4");
+	var dice5 = document.getElementById("dice5");
+	var dice6 = document.getElementById("dice6");
+
+	var diceFaces = ["dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png"];
+
+	dice1.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice2.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice3.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice4.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice5.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice6.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+}
+
+	</script>
+</body>
+</html>
+
+<button onclick="rollDice()">Roll Dice</button>
 
       </div>
     </main><footer class="site-footer h-card">

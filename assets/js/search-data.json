@@ -93,6 +93,17 @@
   
 
   
+      ,"page1": {
+          "title": "Dice Roll",
+          "content": "Dice Roll . . Roll Dice .",
+          "url": "https://shruthim0.github.io/canada/diceroll/",
+          "relUrl": "/diceroll/",
+          "date": ""
+      }
+      
+  
+
+  
 
   
   
@@ -115,7 +126,7 @@
   
 
   
-      ,"page9": {
+      ,"page10": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://shruthim0.github.io/canada/robots.txt",
