@@ -92,9 +92,9 @@ window.onload = wrap_img;
 
 <script>
     const MSG_ON = "Turn on";
-    const IMAGE_ON = "/canada/images/bulb_on.gif";
+    const IMAGE_ON = "/canada/images/HeadsOn.png";
     const MSG_OFF = "Turn off";
-    const IMAGE_OFF = "/canada/images/bulb_off.png"
+    const IMAGE_OFF = "/canada/images/TailsOn.png"
 
     // return string with current value of each bit
     function getBits() {
@@ -131,16 +131,16 @@ window.onload = wrap_img;
         }
         return conversion;
     }
-    function coinFlip() {
-        i = math.random(0,1)
-        if (i==1) {
-            image.src = IMAGE_ON
-        } else {
-            image.src = IMAGE_OFF
+    // function coinFlip() {
+        // i = math.random(0,1)
+       // if (i==1) {
+    //        image.src = IMAGE_ON
+    //    } else {
+     //       image.src = IMAGE_OFF
 
-        }
+    //    }
 
-    }
+    //}
     // toggle selected bit and recalculate
     function toggleBit(i) {
         //alert("Digit action: " + i );
