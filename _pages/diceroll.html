@@ -1,0 +1,59 @@
+---
+layout: base
+permalink: /diceroll/
+title: Dice Roll
+---
+
+<html>
+<head>
+	<title>Dice Roll</title>
+	<style>
+		#dice-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.dice {
+			width: 100px;
+			height: 100px;
+			margin: 10px;
+			background-color: white;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+	<div id="dice-container">
+		<div class="dice" id="dice1"></div>
+		<div class="dice" id="dice2"></div>
+		<div class="dice" id="dice3"></div>
+		<div class="dice" id="dice4"></div>
+		<div class="dice" id="dice5"></div>
+		<div class="dice" id="dice6"></div>
+	</div>
+
+	<script>
+
+function rollDice() {
+	var dice1 = document.getElementById("dice1");
+	var dice2 = document.getElementById("dice2");
+	var dice3 = document.getElementById("dice3");
+	var dice4 = document.getElementById("dice4");
+	var dice5 = document.getElementById("dice5");
+	var dice6 = document.getElementById("dice6");
+
+	var diceFaces = ["dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png"];
+
+	dice1.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice2.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice3.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice4.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice5.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	dice6.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+}
+
+	</script>
+</body>
+</html>
+
+<button onclick="rollDice()">Roll Dice</button>
