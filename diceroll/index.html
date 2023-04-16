@@ -99,23 +99,23 @@ window.onload = wrap_img;
 
 	<script>
 
-function rollDice() {
-	var dice1 = document.getElementById("dice1");
-	var dice2 = document.getElementById("dice2");
-	var dice3 = document.getElementById("dice3");
-	var dice4 = document.getElementById("dice4");
-	var dice5 = document.getElementById("dice5");
-	var dice6 = document.getElementById("dice6");
+	function rollDice() {
+		var dice1 = document.getElementById("dice1");
+		var dice2 = document.getElementById("dice2");
+		var dice3 = document.getElementById("dice3");
+		var dice4 = document.getElementById("dice4");
+		var dice5 = document.getElementById("dice5");
+		var dice6 = document.getElementById("dice6");
 
-	var diceFaces = ["dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png"];
+		var diceFaces = ["dice1.png", "dice2.png", "dice3.png", "dice4.png", "dice5.png", "dice6.png"];
 
-	dice1.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
-	dice2.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
-	dice3.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
-	dice4.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
-	dice5.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
-	dice6.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
-}
+		dice1.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+		dice2.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+		dice3.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+		dice4.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+		dice5.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+		dice6.style.backgroundImage = "url(" + diceFaces[Math.floor(Math.random() * 6)] + ")";
+	}
 
 	</script>
 </body>
