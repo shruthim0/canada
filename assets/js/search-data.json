@@ -136,6 +136,14 @@
   
 
   
+      ,"page6": {
+          "title": "Spin the Wheel",
+          "content": "&lt;!DOCTYPE html&gt; . SPIN THE WHEEL . Spin the Wheel .",
+          "url": "https://shruthim0.github.io/canada/wheel/",
+          "relUrl": "/wheel/",
+          "date": ""
+      }
+      
   
 
   
@@ -148,7 +156,10 @@
   
 
   
-      ,"page10": {
+  
+
+  
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://shruthim0.github.io/canada/robots.txt",
