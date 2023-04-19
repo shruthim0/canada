@@ -127,6 +127,7 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h1"><a href="#Adding-images-(in-Python)">Adding images (in Python) </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Spin-the-Wheel">Spin the Wheel </a></li>
+<li class="toc-entry toc-h2"><a href="#Population-Growth">Population Growth </a></li>
 <li class="toc-entry toc-h2"><a href="#Example-on-how-simplification-can-cause-bias">Example on how simplification can cause bias </a></li>
 <li class="toc-entry toc-h2"><a href="#--How-does-this-simulation-have-bias?">- How does this simulation have bias? </a></li>
 </ul>
@@ -445,6 +446,43 @@ daysStarving ← 0
  
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Number of blue:'</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Number of red:'</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Population-Growth">
+<a class="anchor" href="#Population-Growth" aria-hidden="true"><span class="octicon octicon-link"></span></a>Population Growth<a class="anchor-link" href="#Population-Growth"> </a>
+</h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">totalPopulation</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="n">growthFactor</span> <span class="o">=</span> <span class="mf">1.00005</span>
+<span class="n">dayCount</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Every 2 months the population is reported</span>
+<span class="k">while</span> <span class="n">totalPopulation</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">:</span>
+    <span class="n">totalPopulation</span> <span class="o">*=</span> <span class="n">growthFactor</span>
+    <span class="c1">#Every 56th day, population is reported</span>
+    <span class="n">dayCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">dayCount</span> <span class="o">==</span> <span class="mi">56</span><span class="p">:</span> 
+        <span class="n">dayCount</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">totalPopulation</span><span class="p">)</span>
 </pre></div>
 
     </div>
