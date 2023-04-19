@@ -145,7 +145,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="k">def</span> <span class="nf">coinflip</span><span class="p">():</span>         <span class="c1">#def function </span>
     <span class="n">randomflip</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#picks either 0 or 1 randomly (50/50 chance of either) </span>
@@ -167,6 +167,24 @@ window.onload = wrap_img;
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Tails
+Tails
+Tails
+Heads
+Heads
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
     
 
@@ -183,7 +201,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="n">status</span> <span class="o">=</span> <span class="s2">&quot;in&quot;</span>
 <span class="k">while</span> <span class="n">status</span> <span class="o">!=</span> <span class="s2">&quot;out&quot;</span><span class="p">:</span>
@@ -218,7 +236,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="k">def</span> <span class="nf">parse_input</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">parse_input</span><span class="p">(</span><span class="n">input_string</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">input_string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span> <span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="s2">&quot;4&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;6&quot;</span><span class="p">}:</span>
         <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">input_string</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
@@ -239,7 +257,7 @@ window.onload = wrap_img;
 <span class="n">num_dice</span> <span class="o">=</span> <span class="n">parse_input</span><span class="p">(</span><span class="n">num_dice_input</span><span class="p">)</span>
 <span class="n">roll_results</span> <span class="o">=</span> <span class="n">roll_dice</span><span class="p">(</span><span class="n">num_dice</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you rolled:&quot;</span><span class="p">,</span> <span class="n">roll_results</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you rolled:&quot;</span><span class="p">,</span> <span class="n">roll_results</span><span class="p">)</span> 
 </pre></div>
 
     </div>
@@ -262,7 +280,7 @@ window.onload = wrap_img;
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Spin the wheel!&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------------------------&quot;</span><span class="p">)</span>
@@ -280,6 +298,38 @@ window.onload = wrap_img;
  
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of blue:&#39;</span><span class="p">,</span> <span class="n">blue</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of red:&#39;</span><span class="p">,</span> <span class="n">red</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Human-Population-Simulator">Human Population Simulator<a class="anchor-link" href="#Human-Population-Simulator"> </a></h2>
+</div>
+</div>
+</div>
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">totalPopulation</span> <span class="o">=</span> <span class="mi">50</span> 
+<span class="n">growthFactor</span> <span class="o">=</span> <span class="mf">1.00005</span>
+<span class="n">dayCount</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Every 2 months the population is reported</span>
+<span class="k">while</span> <span class="n">totalPopulation</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">:</span>
+    <span class="n">totalPopulation</span> <span class="o">*=</span> <span class="n">growthFactor</span>
+    <span class="c1">#Every 56th day, population is reported</span>
+    <span class="n">dayCount</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">if</span> <span class="n">dayCount</span> <span class="o">==</span> <span class="mi">56</span><span class="p">:</span> 
+        <span class="n">dayCount</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">totalPopulation</span><span class="p">)</span>
 </pre></div>
 
     </div>
