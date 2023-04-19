@@ -1,7 +1,9 @@
 ---
-title: A guide through simulations using question
+description: Guide
+title: Lesson Walkthrough
+toc: true 
 layout: base
-description: Coin flip simulation using binary to display images
+badges: true
 ---
 
 Imagine a theme park wants to create a simulation. Brainstorm some ideas they could simulate the park.
