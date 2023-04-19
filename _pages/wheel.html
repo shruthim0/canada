@@ -1,0 +1,24 @@
+---
+layout: base
+permalink: /wheel/
+title: Spin the Wheel
+---
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SPIN THE WHEEL</title>
+</head>
+<body>
+    <button onclick="generateRandomImage()">Spin the Wheel</button>
+    <img id="imageOutput" src="" alt="Random Image">
+
+<script>
+    function generateRandomImage() {
+        var images = ["red.jpg", "blue.jpg", "green.jpg", "yellow.jpg"];
+        var randomImage = images[Math.floor(Math.random() * images.length)];
+        var imageOutput = document.getElementById("imageOutput");
+        imageOutput.src = randomImage;
+    }
+</script>
+</body>
+</html>
