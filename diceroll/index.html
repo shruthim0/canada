@@ -112,7 +112,24 @@ window.onload = wrap_img;
   </body>
 </html>
 
+<head>
+  <title> Dice Roll</title>
+</head>
+<body>
+  <button onclick="generateRandomCard()">Roll Die</button>
+  <p id="cardOutput"></p>
 
+<script>
+
+      var side = ["⚫", "2", "3", "4", "5", "6"];
+
+      function generateRandomCard() {
+          var randomCard = cards[Math.floor(Math.random() * side.length)];
+          var cardOutput = document.getElementById("cardOutput");
+          cardOutput.textContent = randomside + " of ";
+      }
+</script>
+</body>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
