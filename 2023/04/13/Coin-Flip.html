@@ -76,6 +76,8 @@ window.onload = wrap_img;
 </head>
 <body>
 
+<button onclick="flip()">FLIP</button>
+
 <script>
 
 function displayImage(src, width, height) {
@@ -92,14 +94,14 @@ var randomNum = Math.random(0,1)
     // toggle selected bit and recalculate
 function flip() {
     if(randomNum == 1) {
-        displayImage('HeadsOn2.png', 100, 100)
+        displayImage('/images/HeadsOn2.png', 100, 100)
     } else {
-        displayImage('TailsOn2.png', 100, 100)
+        displayImage('/images/TailsOn2.png', 100, 100)
 }
 }
 </script>
 
-<button onclick="flip()">FLIP</button>
+</body>
 
 
 
@@ -108,7 +110,9 @@ function flip() {
 
 
 
-</body></html>
+
+
+</html>
 
       </div>
     </main><footer class="site-footer h-card">
