@@ -69,68 +69,48 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <html>
-  <head>
-    <title>Dice Roll</title>
-    <style>
-      .dice {
-        width: 100px;
-        height: 100px;
-        margin: 10px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .dice-container {
-        display: flex;
-        justify-content: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="dice-container">
-      <div class="dice" id="dice"></div>
-    </div>
-    <button onclick="rollDice()">Roll Dice</button>
+        <style>
 
-    <script>
-      function rollDice() {
-        const faces = [
-          "_pages/dice1.png",
-          "_pages/dice2.png",
-          "_pages/dice3.png",
-          "_pages/dice4.png",
-          "_pages/dice5.png",
-          "_pages/dice6.png",
-        ];
+body {
+  text-align:center;
+}
+#square {
+  width:100px;
+  height:100px;
+  border: 1px solid black;
+  margin: 100px auto 20px auto;
+}
+button {
+  padding:5px 25px;
+}
 
-	}
-        const randomIndex = Math.floor(Math.random() * 6);
-        const dice = document.getElementById("dice");
-        dice.style.backgroundImage = `url(${faces[randomIndex]})`;
-    </script>
-  </body>
-</html>
+</style>
 
-<head>
-  <title> Dice Roll</title>
-</head>
-<body>
-  <button onclick="generateRandomCard()">Roll Die</button>
-  <p id="cardOutput"></p>
+<div id = 'square'> </div>
+<button  id = 'button'>Roll</button>
 
 <script>
 
-      var side = ["⚫", "2", "3", "4", "5", "6"];
+function printNumber(number) {
+  var square = document.getElementById("square");
+  square.innerHTML = number;
+}
 
-      function generateRandomCard() {
-          var randomCard = cards[Math.floor(Math.random() * side.length)];
-          var cardOutput = document.getElementById("cardOutput");
-          cardOutput.textContent = randomside + " of ";
-      }
-      
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = dice.roll();
+  printNumber(result);
+};
+
+var dice = {
+  sides: 6,
+  roll: function() {
+   var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
 </script>
-</body>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
