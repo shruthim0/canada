@@ -4,63 +4,47 @@ permalink: /wheel/
 title: Spin the Wheel
 ---
 
-
-<html>
-<head>
-<title>Coin Flip</title>
-</head>
-<body>
-
-
 <style>
-button {
-  background-color: #708ff4; /* blue */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px 2px;
-  cursor: pointer;
+#wheel {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, blue 33.33%, red 33.33%, red 66.66%, green 66.66%);
+  transform-origin: 50% 50%;
+  transition: transform 3s ease-in-out;
 }
 
-.imageFeatures {
-    width: 100;
-    height: 100;
-    text-align: center;
+.spin {
+  transform: rotate(720deg);
 }
 </style>
 
-<button id = 'roll'>roll</button>
 
+
+<html>
+  <head>
+    <title>Wheel Spin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="wheel"></div>
+    <button id="spin-btn">Spin</button>
+    <script src="script.js"></script>
+  </body>
+
+  </html>
+    
+    
 <script>
-var button = document.getElementById('roll');
 
-button.onclick = function() {
-    roll()
-}
+const wheel = document.getElementById("wheel");
+const spinBtn = document.getElementById("spin-btn");
 
+spinBtn.addEventListener("click", () => {
+  wheel.classList.add("spin");
+  setTimeout(() => {
+    wheel.classList.remove("spin");
+  }, 3000);
+});
 
-
-function displayImage(src) {
- var img = document.createElement("img");
- img.src = src;
- img.classList.add("imageFeatures");
- document.body.appendChild(img);
-}
-
-    // toggle selected bit and recalculate
-function roll() {
-    var randomNum = Math.random(1,6)
-    if(randomNum == 1) {
-        displayImage('{{site.baseurl}}/images/dice1.png')
-    } else {
-        displayImage('{{site.baseurl}}/images/dice2.png')
-}
-}
 </script>
-
-</body>
-</html>
