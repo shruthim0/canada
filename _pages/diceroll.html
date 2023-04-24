@@ -4,65 +4,75 @@ permalink: /diceroll/
 title: Dice Roll
 ---
 
+<style>
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+button {
+  background-color: rgb(82, 186, 179);
+  border-radius: 6px;
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  text-transform: uppercase;
+  width: 200px;
+  cursor: pointer;
+}
+#placeholder {
+  height: 100px;
+  width: 100px;
+  padding: 50px;
+  margin: 50px auto;
+  border: 1px solid gray;
+  border-radius: 10px;  
+  font-size:80px;
+}
+
+</style>
+
+
 <html>
-  <head>
-    <title>Dice Roll</title>
-    <style>
-      .dice {
-        width: 100px;
-        height: 100px;
-        margin: 10px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      }
-      .dice-container {
-        display: flex;
-        justify-content: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="dice-container">
-      <div class="dice" id="dice"></div>
-    </div>
-    <button onclick="rollDice()">Roll Dice</button>
-
-    <script>
-      function rollDice() {
-        const faces = [
-          "_pages/dice1.png",
-          "_pages/dice2.png",
-          "_pages/dice3.png",
-          "_pages/dice4.png",
-          "_pages/dice5.png",
-          "_pages/dice6.png",
-        ];
-
-	}
-        const randomIndex = Math.floor(Math.random() * 6);
-        const dice = document.getElementById("dice");
-        dice.style.backgroundImage = `url(${faces[randomIndex]})`;
-    </script>
-  </body>
+<head>
+    <title>Dice</title>
+    <link rel="stylesheet" href="style.css">
+</head>  
+<body>
+  <p id="placeholder">
+  
+  </p>
+  <button id="button">Roll Dice</button>
+  <script src="dice.js"></script>
+  <script src="ui.js"></script>
+</body>
 </html>
 
-<head>
-  <title> Dice Roll</title>
-</head>
-<body>
-  <button onclick="generateRandomCard()">Roll Die</button>
-  <p id="cardOutput"></p>
+
 
 <script>
+var dice = {
+  sides: 6,
+  roll: function () {
+    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
 
-      var side = ["⚫", "2", "3", "4", "5", "6"];
 
-      function generateRandomCard() {
-          var randomCard = cards[Math.floor(Math.random() * side.length)];
-          var cardOutput = document.getElementById("cardOutput");
-          cardOutput.textContent = randomside + " of ";
-      }
-      
+
+//Prints dice roll to the page
+
+function printNumber(number) {
+  var placeholder = document.getElementById('placeholder');
+  placeholder.innerHTML = number;
+}
+
+var button = document.getElementById('button');
+
+button.onclick = function() {
+  var result = dice.roll();
+  printNumber(result);
+};
+
 </script>
-</body>
