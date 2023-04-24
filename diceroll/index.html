@@ -70,7 +70,6 @@ window.onload = wrap_img;
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <style>
-
 body {
   text-align:center;
 }
@@ -81,16 +80,26 @@ body {
   margin: 100px auto 20px auto;
 }
 button {
-  padding:5px 25px;
+  background-color: #708ff4; /* blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 2px;
+  cursor: pointer;
 }
-
 </style>
+
+
 
 <div id = 'square'> </div>
 <button  id = 'button'>Roll</button>
 
-<script>
 
+<script>
 function printNumber(number) {
   var square = document.getElementById("square");
   square.innerHTML = number;
