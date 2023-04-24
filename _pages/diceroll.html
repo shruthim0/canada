@@ -6,66 +6,29 @@ title: Dice Roll
 
 <style>
 
-* {
-  font-family: Helvetica, Arial, sans-serif;
-  text-align: center;
+body {
+  text-align:center;
+}
+#square {
+  width:100px;
+  height:100px;
+  border: 1px solid black;
+  margin: 100px auto 20px auto;
 }
 button {
-  background-color: rgb(82, 186, 179);
-  border-radius: 6px;
-  border: none;
-  color: rgb(255, 255, 255);
-  padding: 10px;
-  text-transform: uppercase;
-  width: 200px;
-  cursor: pointer;
-}
-#placeholder {
-  height: 100px;
-  width: 100px;
-  padding: 50px;
-  margin: 50px auto;
-  border: 1px solid gray;
-  border-radius: 10px;  
-  font-size:80px;
+  padding:5px 25px;
 }
 
 </style>
 
-
-<html>
-<head>
-    <title>Dice</title>
-    <link rel="stylesheet" href="style.css">
-</head>  
-<body>
-  <p id="placeholder">
-  
-  </p>
-  <button id="button">Roll Dice</button>
-  <script src="dice.js"></script>
-  <script src="ui.js"></script>
-</body>
-</html>
-
-
+<div id = 'square'> </div>
+<button  id = 'button'>Roll</button>
 
 <script>
-var dice = {
-  sides: 6,
-  roll: function () {
-    var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
-}
-
-
-
-//Prints dice roll to the page
 
 function printNumber(number) {
-  var placeholder = document.getElementById('placeholder');
-  placeholder.innerHTML = number;
+  var square = document.getElementById("square");
+  square.innerHTML = number;
 }
 
 var button = document.getElementById('button');
@@ -75,4 +38,11 @@ button.onclick = function() {
   printNumber(result);
 };
 
+var dice = {
+  sides: 6,
+  roll: function() {
+   var randomNumber = Math.floor(Math.random() * this.sides) + 1;
+    return randomNumber;
+  }
+}
 </script>
