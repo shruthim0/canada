@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AASA,OAAQ;EACN,gBAAgB,EARA,OAAO;EASvB,KAAK,EARa,OAAO;EASzB,aAAa,EARQ,GAAG;EASxB,OAAO,EARQ,QAAQ;EASvB,SAAS,EARQ,IAAI;EASrB,WAAW,EARQ,IAAI;EAUvB,aAAQ;IACN,gBAAgB,EAAE,OAA6B",
+"sources": ["uidemo.scss"],
+"names": [],
+"file": "sassdemo.css"
+}

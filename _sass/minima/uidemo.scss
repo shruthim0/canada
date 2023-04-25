@@ -1,0 +1,21 @@
+
+
+$button-bg-color: #4CAF50;
+$button-text-color: #FFFFFF;
+$button-border-radius: 4px;
+$button-padding: 8px 16px;
+$button-font-size: 16px;
+$button-font-weight: bold;
+
+.button {
+  background-color: $button-bg-color;
+  color: $button-text-color;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+
+  &:hover {
+    background-color: darken($button-bg-color, 10%);
+  }
+}
