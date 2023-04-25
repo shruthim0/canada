@@ -123,16 +123,20 @@ window.onload = wrap_img;
 <li class="toc-entry toc-h2"><a href="#Functions-we-often-need-(python)">Functions we often need (python) </a></li>
 <li class="toc-entry toc-h2"><a href="#Functions-we-often-need-(js)">Functions we often need (js) </a></li>
 <li class="toc-entry toc-h2"><a href="#College-Board-Question-1">College Board Question 1 </a></li>
-<li class="toc-entry toc-h2"><a href="#Card-Flip">Card Flip </a></li>
-<li class="toc-entry toc-h2"><a href="#Coin-Flip">Coin Flip </a></li>
-<li class="toc-entry toc-h1"><a href="#Adding-images-(in-Python)">Adding images (in Python) </a>
+<li class="toc-entry toc-h2"><a href="#Examples">Examples </a>
 <ul>
-<li class="toc-entry toc-h2"><a href="#Spin-the-Wheel">Spin the Wheel </a></li>
-<li class="toc-entry toc-h2"><a href="#Population-Growth-and-Plots">Population Growth and Plots </a></li>
-<li class="toc-entry toc-h2"><a href="#Example-on-how-simplification-can-cause-bias">Example on how simplification can cause bias </a></li>
+<li class="toc-entry toc-h3"><a href="#Card-Flip">Card Flip </a></li>
+<li class="toc-entry toc-h3"><a href="#Coin-Flip">Coin Flip </a></li>
 </ul>
 </li>
-<li class="toc-entry toc-h1"><a href="#Full-stack-examples">Full stack examples </a>
+<li class="toc-entry toc-h2"><a href="#Adding-images-(in-Python)">Adding images (in Python) </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Spin-the-Wheel">Spin the Wheel </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Population-Growth-and-Plots">Population Growth and Plots </a></li>
+<li class="toc-entry toc-h2"><a href="#Example-on-how-simplification-can-cause-bias">Example on how simplification can cause bias </a></li>
+<li class="toc-entry toc-h1"><a href="#JS-examples">JS examples </a>
 <ul>
 <li class="toc-entry toc-h2"><a href="#Hacks">Hacks </a></li>
 </ul>
@@ -311,7 +315,7 @@ daysStarving ← 0
 <p>}</p>
 <ul>
 <li>This simulation simplifies a real-world scenario into something that can be modeled in code and executed on a computer.</li>
-<li>Explain what each part of the code does</li>
+<li>Explain what the code does</li>
 </ul>
 
 </div>
@@ -320,9 +324,18 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Card-Flip">
-<a class="anchor" href="#Card-Flip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Card Flip<a class="anchor-link" href="#Card-Flip"> </a>
+<h2 id="Examples">
+<a class="anchor" href="#Examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Examples<a class="anchor-link" href="#Examples"> </a>
 </h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Card-Flip">
+<a class="anchor" href="#Card-Flip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Card Flip<a class="anchor-link" href="#Card-Flip"> </a>
+</h3>
 </div>
 </div>
 </div>
@@ -351,9 +364,9 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Coin-Flip">
+<h3 id="Coin-Flip">
 <a class="anchor" href="#Coin-Flip" aria-hidden="true"><span class="octicon octicon-link"></span></a>Coin Flip<a class="anchor-link" href="#Coin-Flip"> </a>
-</h2>
+</h3>
 </div>
 </div>
 </div>
@@ -400,9 +413,9 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Adding-images-(in-Python)">
+<h2 id="Adding-images-(in-Python)">
 <a class="anchor" href="#Adding-images-(in-Python)" aria-hidden="true"><span class="octicon octicon-link"></span></a>Adding images (in Python)<a class="anchor-link" href="#Adding-images-(in-Python)"> </a>
-</h1>
+</h2>
 </div>
 </div>
 </div>
@@ -461,9 +474,9 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Spin-the-Wheel">
+<h3 id="Spin-the-Wheel">
 <a class="anchor" href="#Spin-the-Wheel" aria-hidden="true"><span class="octicon octicon-link"></span></a>Spin the Wheel<a class="anchor-link" href="#Spin-the-Wheel"> </a>
-</h2>
+</h3>
 </div>
 </div>
 </div>
@@ -530,6 +543,7 @@ daysStarving ← 0
 <span class="n">totalPopulation</span> <span class="o">=</span> <span class="mi">50</span> 
 <span class="n">growthFactor</span> <span class="o">=</span> <span class="mf">1.00005</span>
 <span class="n">dayCount</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Every 2 months the population is reported</span>
+
 <span class="k">while</span> <span class="n">totalPopulation</span> <span class="o">&lt;</span> <span class="mi">1000000</span><span class="p">:</span>
     <span class="n">totalPopulation</span> <span class="o">*=</span> <span class="n">growthFactor</span>
     <span class="c1">#Every 56th day, population is reported</span>
@@ -546,6 +560,15 @@ daysStarving ← 0
 </div>
     
 
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here we initialize the total population to be 50, then set the growth factor as 1.00005 (.005 percent change). It will print the population every 56th day until it reaches one million. It multiplies the current population by the growth factor in each iteration, and increments the day count. When the day count reaches 56, it prints the current population and resets the day count to 0.</p>
+<p>Note! This simulation assumes that the growth factor remains constant as time progresses, which may not be a realistic assumption in real-world scenarios.</p>
+
+</div>
+</div>
+</div>
     
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -648,8 +671,8 @@ daysStarving ← 0
 <div class="cell border-box-sizing text_cell rendered">
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Full-stack-examples">
-<a class="anchor" href="#Full-stack-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Full stack examples<a class="anchor-link" href="#Full-stack-examples"> </a>
+<h1 id="JS-examples">
+<a class="anchor" href="#JS-examples" aria-hidden="true"><span class="octicon octicon-link"></span></a>JS examples<a class="anchor-link" href="#JS-examples"> </a>
 </h1>
 <p><a href="https://shruthim0.github.io/canada/diceroll/">Dice Roll</a>
 <a href="https://shruthim0.github.io/canada/2023/04/13/Coin-Flip.html">Binary Coin Flip</a>
