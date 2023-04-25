@@ -56,7 +56,7 @@ $button-font-weight: bold;
   color: $secondary-color;
 }
 
-// Using LOOP to make 3 boxes of varying sizes
+// Using LOOP to make 4 boxes of varying sizes
 @for $i from 1 through 4 {
   .box-#{$i} {
     width: 100px * $i;
