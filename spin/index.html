@@ -4,20 +4,20 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Dice Roll | canada</title>
+<title>spoiin | canada</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Dice Roll" />
+<meta property="og:title" content="spoiin" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="we love canada" />
 <meta property="og:description" content="we love canada" />
-<link rel="canonical" href="https://shruthim0.github.io/canada/diceroll/" />
-<meta property="og:url" content="https://shruthim0.github.io/canada/diceroll/" />
+<link rel="canonical" href="https://shruthim0.github.io/canada/spin/" />
+<meta property="og:url" content="https://shruthim0.github.io/canada/spin/" />
 <meta property="og:site_name" content="canada" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Dice Roll" />
+<meta property="twitter:title" content="spoiin" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"we love canada","headline":"Dice Roll","url":"https://shruthim0.github.io/canada/diceroll/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"we love canada","headline":"spoiin","url":"https://shruthim0.github.io/canada/spin/"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/canada/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://shruthim0.github.io/canada/feed.xml" title="canada" /><link rel="shortcut icon" type="image/x-icon" href="/canada/images/canadalogo.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -70,55 +70,45 @@ window.onload = wrap_img;
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         <style>
-body {
-  text-align: center;
-  font-size: 20px;
-}
-#square {
-  width: 150px;
-  height: 150px;
-  border: 10px solid black;
-  margin: 100px auto 20px auto;
-}
-button {
-  background-color: #708ff4; /* blue */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 5px 2px;
-  cursor: pointer;
-}
-</style>
-
-<div id = 'square'> </div>
-<button  id = 'button'>Roll</button>
-
-
-<script>
-function printNumber(number) {
-  var square = document.getElementById("square");
-  square.innerHTML = number;
-}
-
-var button = document.getElementById('button');
-
-button.onclick = function() {
-  var result = dice.roll();
-  printNumber(result);
-};
-
-var dice = {
-  sides: 6,
-  roll: function() {
-   var randomNumber = Math.floor(Math.random() * this.sides) + 1;
-    return randomNumber;
-  }
-}
-</script>
+    #wheel {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-image: linear-gradient(to right, blue 50%, red 50%);
+        transform-origin: 50% 50%;
+        transition: transform 3s ease-in-out;
+      }
+      
+      .spin {
+        transform: rotate(720deg);
+      }
+    
+    </style>
+    
+    
+    <html>
+      <head>
+        <title>Wheel Spin</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+      </head>
+      <body>
+        <div id="wheel"></div>
+        <button id="spin-btn">Spin</button>
+        <script src="script.js"></script>
+      </body>
+    </html>
+    
+    <script>
+    const wheel = document.getElementById("wheel");
+    const spinBtn = document.getElementById("spin-btn");
+    
+    spinBtn.addEventListener("click", () => {
+      wheel.classList.add("spin");
+      setTimeout(() => {
+        wheel.classList.remove("spin");
+      }, 3000);
+    });
+    </script>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
