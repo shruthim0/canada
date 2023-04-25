@@ -1,12 +1,13 @@
 // 4 features used: variables, mixins, color functions (darken), and loop
 
 // VARIABLES
-$primary-color: #4CAF50;
-$secondary-color: #2196F3;
-$text-color: #333;
+$primary-color: #4b694c;
+$secondary-color: #64a6db;
+$third-color: #835286;
+$text-color: #573b0a;
 $button-border-radius: 4px;
 $button-padding: 8px 16px;
-$button-font-size: 16px;
+$button-font-size: 40px;
 $button-font-weight: bold;
 
 
@@ -22,9 +23,9 @@ $button-font-weight: bold;
   align-items: center;
 
 
-
+// hover color ---> darken by 35%
   &:hover {
-    background-color: darken($bg-color, 10%);
+    background-color: darken($bg-color, 35%);
   }
 }
 
@@ -36,6 +37,11 @@ $button-font-weight: bold;
 .secondary-button {
   @include button($secondary-color, $text-color);
 }
+
+.third-button {
+  @include button($third-color, $text-color);
+}
+
 
 // titles and subtitles
 .title {
@@ -51,13 +57,13 @@ $button-font-weight: bold;
 }
 
 // Using LOOP to make 3 boxes of varying sizes
-@for $i from 1 through 3 {
+@for $i from 1 through 4 {
   .box-#{$i} {
     width: 100px * $i;
     height: 100px * $i;
     background-color: $secondary-color;
     margin: 20px;
-    float: left;
+    float: center;
     justify-content: center;
     align-items: center;
   }
