@@ -119,6 +119,71 @@ var dice = {
   }
 }
 </script>
+
+
+
+/////////////////////////////////
+
+
+<html>
+<head>
+<title>Coin Flip</title>
+</head>
+<body>
+
+
+<style>
+button {
+  background-color: #708ff4; /* blue */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px 2px;
+  cursor: pointer;
+}
+
+.imageFeatures {
+    width: 100;
+    height: 100;
+    text-align: center;
+}
+</style>
+
+<button id = 'roll'>roll</button>
+
+<script>
+var button = document.getElementById('roll');
+
+button.onclick = function() {
+    roll()
+}
+
+
+
+function displayImage(src) {
+ var img = document.createElement("img");
+ img.src = src;
+ img.classList.add("imageFeatures");
+ document.body.appendChild(img);
+}
+
+    // toggle selected bit and recalculate
+function roll() {
+    var randomNum = Math.random(1,6)
+    if(randomNum == 1) {
+        displayImage('/canada/images/dice1.png')
+    } else {
+        displayImage('/canada/images/dice2.png')
+}
+}
+</script>
+
+</body>
+</html>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
