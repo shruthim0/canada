@@ -148,17 +148,6 @@
 
   
       ,"page6": {
-          "title": "spoiin",
-          "content": "&lt;html&gt; &lt;head&gt; &lt;title&gt;Wheel Spin&lt;/title&gt; &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;style.css&quot;&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;wheel&quot;&gt;&lt;/div&gt; &lt;button id=&quot;spin-btn&quot;&gt;Spin&lt;/button&gt; &lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt; &lt;script&gt; const wheel = document.getElementById(&quot;wheel&quot;); const spinBtn = document.getElementById(&quot;spin-btn&quot;); spinBtn.addEventListener(&quot;click&quot;, () =&gt; { wheel.classList.add(&quot;spin&quot;); setTimeout(() =&gt; { wheel.classList.remove(&quot;spin&quot;); }, 3000); }); &lt;/script&gt; .",
-          "url": "https://shruthim0.github.io/canada/spin/",
-          "relUrl": "/spin/",
-          "date": ""
-      }
-      
-  
-
-  
-      ,"page7": {
           "title": "Spin the Wheel",
           "content": "Coin Flip . roll .",
           "url": "https://shruthim0.github.io/canada/wheel/",
@@ -181,7 +170,7 @@
   
 
   
-      ,"page12": {
+      ,"page11": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://shruthim0.github.io/canada/robots.txt",
