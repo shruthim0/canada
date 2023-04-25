@@ -20,10 +20,9 @@ title: Spin the Wheel
 </style>
 
 
-
 <html>
   <head>
-    <title>Wheel Spin</title>
+    <title>Random Wheel Spinner</title>
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
@@ -31,20 +30,35 @@ title: Spin the Wheel
     <button id="spin-btn">Spin</button>
     <script src="script.js"></script>
   </body>
+</html>
 
-  </html>
-    
-    
+
+
 <script>
 
 const wheel = document.getElementById("wheel");
 const spinBtn = document.getElementById("spin-btn");
 
+const colors = ["blue", "red", "green"];
+const randomIndex = Math.floor(Math.random() * colors.length);
+const randomColor = colors[randomIndex];
+
+wheel.style.backgroundImage = `linear-gradient(to right, ${colors.join(", ")})`;
+
 spinBtn.addEventListener("click", () => {
+  const degrees = 360 * Math.random();
+  const result = Math.floor(degrees / (360 / colors.length));
+  const spinDegrees = result * (360 / colors.length) + 720 + degrees;
+
   wheel.classList.add("spin");
+  wheel.style.transform = `rotate(${spinDegrees}deg)`;
+
   setTimeout(() => {
+    wheel.style.transform = "rotate(0deg)";
     wheel.classList.remove("spin");
+    alert(`The wheel landed on ${colors[result]}!`);
   }, 3000);
 });
+
 
 </script>
