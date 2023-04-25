@@ -1,52 +1,62 @@
 .button {
-  background-color: #5e8560;
+  background-color: #4CAF50;
   color: #333;
   border-radius: 4px;
   padding: 8px 16px;
   font-size: 16px;
-  font-weight: bold; }
+  font-weight: bold;
+  justify-content: center;
+  align-items: center; }
   .button:hover {
-    background-color: #0a2e0b; }
+    background-color: #3d8b40; }
 
 .secondary-button {
-  background-color: #566e83;
+  background-color: #2196F3;
   color: #333;
   border-radius: 4px;
   padding: 8px 16px;
   font-size: 16px;
-  font-weight: bold; }
+  font-weight: bold;
+  justify-content: center;
+  align-items: center; }
   .secondary-button:hover {
-    background-color: #082238; }
+    background-color: #0c7cd5; }
 
 .title {
   font-size: 24px;
   font-weight: bold;
-  color: #3a2e0e; }
+  color: #333; }
 
 .subtitle {
   font-size: 18px;
   font-weight: bold;
-  color: #254730; }
+  color: #2196F3; }
 
 .box-1 {
   width: 100px;
   height: 100px;
-  background-color: #443347;
+  background-color: #2196F3;
   margin: 20px;
-  float: left; }
+  float: left;
+  justify-content: center;
+  align-items: center; }
 
 .box-2 {
   width: 200px;
   height: 200px;
-  background-color: #405541;
+  background-color: #2196F3;
   margin: 20px;
-  float: left; }
+  float: left;
+  justify-content: center;
+  align-items: center; }
 
 .box-3 {
   width: 300px;
   height: 300px;
-  background-color: #0d263a;
+  background-color: #2196F3;
   margin: 20px;
-  float: left; }
+  float: left;
+  justify-content: center;
+  align-items: center; }
 
 /*# sourceMappingURL=sassdemo.css.map */

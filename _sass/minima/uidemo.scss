@@ -1,6 +1,6 @@
-// features used: variables, color functions (darken,)
+// 4 features used: variables, mixins, color functions (darken), and loop
 
-// Variables
+// VARIABLES
 $primary-color: #4CAF50;
 $secondary-color: #2196F3;
 $text-color: #333;
@@ -9,7 +9,8 @@ $button-padding: 8px 16px;
 $button-font-size: 16px;
 $button-font-weight: bold;
 
-// Mixins
+
+// MIXINS
 @mixin button($bg-color, $text-color) {
   background-color: $bg-color;
   color: $text-color;
@@ -17,13 +18,17 @@ $button-font-weight: bold;
   padding: $button-padding;
   font-size: $button-font-size;
   font-weight: $button-font-weight;
+  justify-content: center;
+  align-items: center;
+
+
 
   &:hover {
     background-color: darken($bg-color, 10%);
   }
 }
 
-// Buttons
+// buttons
 .button {
   @include button($primary-color, $text-color);
 }
@@ -32,7 +37,7 @@ $button-font-weight: bold;
   @include button($secondary-color, $text-color);
 }
 
-// Titles and subtitles
+// titles and subtitles
 .title {
   font-size: 24px;
   font-weight: bold;
@@ -45,7 +50,7 @@ $button-font-weight: bold;
   color: $secondary-color;
 }
 
-// Loop
+// Using LOOP to make 3 boxes of varying sizes
 @for $i from 1 through 3 {
   .box-#{$i} {
     width: 100px * $i;
@@ -53,5 +58,7 @@ $button-font-weight: bold;
     background-color: $secondary-color;
     margin: 20px;
     float: left;
+    justify-content: center;
+    align-items: center;
   }
 }
