@@ -5,11 +5,7 @@ toc: true
 layout: base
 ---
 
-Imagine a theme park wants to create a simulation. Brainstorm some ideas they could simulate the park.
-
-If they wanted to determine how long the expected wait time is for their most popular ride, what kinds of patterns should they pay attention to(ride preference, food, ticket, walking, etc.)? Explain what it would denote and how it would help create this simulation.
-
-Now for one of the simulation ideas you brainstormed, use that to design your own idea but not execute it. Just outline the characteristics to make it possible and how to make the simulation possible.
+Imagine a theme park wants to determine how long the expected wait time is for their most popular ride, what kinds of patterns should they pay attention to(ride preference, food, ticket, walking, etc.)? Explain what it would denote and how it would help create this simulation. Discuss with the people around you and write it below.
 
 ---
 
