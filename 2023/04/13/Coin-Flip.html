@@ -76,9 +76,17 @@ window.onload = wrap_img;
 </head>
 <body>
 
-<button onclick="flip()">FLIP</button>
+
+
 
 <script>
+<button  id = 'flipButton'>FLIP</button>
+
+var button = document.getElementById('flipButton');
+
+button.onclick = function() {
+    flip()
+}
 
 function displayImage(src, width, height) {
  var img = document.createElement("img");
@@ -87,9 +95,6 @@ function displayImage(src, width, height) {
  img.height = height;
  document.body.appendChild(img);
 }
-
-
-
 
     // toggle selected bit and recalculate
 function flip() {
