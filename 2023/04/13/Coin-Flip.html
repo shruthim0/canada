@@ -96,15 +96,16 @@ button {
 }
 </style>
 
-<body>
+
 <button id="flipButton">FLIP</button>
 
+<body>
 
 <script>
 var button = document.getElementById('flipButton');
 
 button.onclick = function() {
-    flip()
+    flip(randomNum)
 }
 
 function displayImage(src) {
