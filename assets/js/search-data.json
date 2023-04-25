@@ -14,7 +14,7 @@
     
         ,"post1": {
             "title": "SASS Lecture Group Reflection",
-            "content": "Modular SCSS . Nesting . Variables . Operators . Conditional Statements . Loops in SASS .",
+            "content": "Part 1: Reflections 0.4 Points . Write a short description of each key feature of Sass and compare it to how it to CSS and how using Sass makes your life easier when using all the features. Include examples of how it would have made prior features from past projects simpler to implement. Also answer the questions indicated as hack questions. | . Modular SCSS - Lydia . Nesting - Jake . Variables - Shruthi . Operators - Lydia . Conditional Statements - Jake . Loops in SASS - Shruthi . Functions - Sarah . Mix-Ins - Lina . Inheritance - Lina .",
             "url": "https://shruthim0.github.io/canada/2023/04/25/SASS-Reflection.html",
             "relUrl": "/2023/04/25/SASS-Reflection.html",
             "date": " • Apr 25, 2023"
