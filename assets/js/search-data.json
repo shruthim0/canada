@@ -69,7 +69,7 @@
     
         ,"post6": {
             "title": "Coin Flip Part 2",
-            "content": "&lt;!DOCTYPE html&gt; . FLIP . . import random # importing Image class from PIL package from PIL import Image # creating a object im = Image.open(r&quot;images/HeadsOn.png&quot;) image = Image.open(r&quot;images/TailsOn.png&quot;) i=random.randint(0,1) if i == 1: print(&quot;heads&quot;) display(im) else: print(&quot;tails&quot;) display(image) . heads .",
+            "content": "&lt;!DOCTYPE html&gt; . FLIP . . import random # importing Image class from PIL package from PIL import Image # creating a object im = Image.open(r&quot;images/HeadsOn.png&quot;) image = Image.open(r&quot;images/TailsOn.png&quot;) i=random.randint(0,1) if i == 1: print(&quot;heads&quot;) display(im) else: print(&quot;tails&quot;) display(image) . heads . &lt;/p&gt; Coin Flip . FLIP &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; .",
             "url": "https://shruthim0.github.io/canada/2023/04/13/Coin-Flip-2.html",
             "relUrl": "/2023/04/13/Coin-Flip-2.html",
             "date": " • Apr 13, 2023"

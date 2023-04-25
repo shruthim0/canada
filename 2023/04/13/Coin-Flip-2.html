@@ -237,8 +237,52 @@ function toggleBit(i) {
 </div>
     
 
-</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><html>&lt;/p&gt;
+<p><head>
+ <title>Coin Flip</title>
+</head></p>
+<body>
 
+<button onclick="flip(randomNum)">FLIP</button>
+
+<script>
+
+function displayImage(src) {
+ var img = document.createElement("img");
+ img.src = src;
+ img.classList.add("imageFeatures");
+ document.body.appendChild(img);
+}
+
+.imageFeatures
+    {
+    width: 100;
+    height: 100;
+    }
+
+var randomNum = Math.random(0,1)
+
+    // toggle selected bit and recalculate
+function flip(randomNum) {
+    if(randomNum == 1) {
+        displayImage("/canada/images/TailsOn.png", 100, 100)
+    } else {
+        displayImage('/canada/images/TailsOn.png', 100, 100)
+}
+}
+
+</script>
+
+</body>
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+ 
+
+</html></p></div></div></div></div>
 
 
   </div><a class="u-url" href="/canada/2023/04/13/Coin-Flip-2.html" hidden></a>
