@@ -80,80 +80,29 @@ window.onload = wrap_img;
  <div id="cardOutput"></div>
 
 
-
-
-
-
+<head>
+   <title>Random Card Generator</title>
+</head>
+<body>
+   <button onclick="generateRandomCard()">Generate Random Card</button>
+   <p id="cardOutput"></p>
 
 
 <script>
- var cards = [
-     {value: "Ace", suit: "Diamonds", image: "D1.png"},
-     {value: "2", suit: "Diamonds", image: "../cards/D2.png"},
-     {value: "3", suit: "Diamonds", image: "../cards/D3.png"},
-     {value: "4", suit: "Diamonds", image: "../cards/D4.png"},
-     {value: "5", suit: "Diamonds", image: "../cards/D5.png"},
-     {value: "6", suit: "Diamonds", image: "../cards/D6.png"},
-     {value: "7", suit: "Diamonds", image: "../cards/D7.png"},
-     {value: "8", suit: "Diamonds", image: "../cards/D8.png"},
-     {value: "9", suit: "Diamonds", image: "../cards/D9.png"},
-     {value: "10", suit: "Diamonds", image: "../cards/D10.png"},
-     {value: "Jack", suit: "Diamonds", image: "../cards/D11.png"},
-     {value: "Queen", suit: "Diamonds", image: "../cards/D12.png"},
-     {value: "King", suit: "Diamonds", image: "../cards/D13.png"},
-     {value: "Ace", suit: "Clubs", image: "../cards/S1.png"},
-     {value: "2", suit: "Clubs", image: "../cards/S2.png"},
-     {value: "3", suit: "Clubs", image: "../cards/S3.png"},
-     {value: "4", suit: "Clubs", image: "../cards/S4.png"},
-     {value: "5", suit: "Clubs", image: "../cards/S5.png"},
-     {value: "6", suit: "Clubs", image: "../cards/S6.png"},
-     {value: "7", suit: "Clubs", image: "../cards/S7.png"},
-     {value: "8", suit: "Clubs", image: "../cards/S8.png"},
-     {value: "9", suit: "Clubs", image: "../cards/S9.png"},
-     {value: "10", suit: "Clubs", image: "../cards/S10.png"},
-     {value: "Jack", suit: "Clubs", image: "../cards/S11.png"},
-     {value: "Queen", suit: "Clubs", image: "..cards/S12.png"},
-     {value: "King", suit: "Clubs", image: "../cards/S13.png"},
-     {value: "Ace", suit: "Hearts", image: "../cards/H1.png"},
-     {value: "2", suit: "Hearts", image: "../cards/H2.png"},
-     {value: "3", suit: "Hearts", image: "../cards/H3.png"},
-     {value: "4", suit: "Hearts", image: "../cards/H4.png"},
-     {value: "5", suit: "Hearts", image: "../cards/H5.png"},
-     {value: "6", suit: "Hearts", image: "../cards/H6.png"},
-     {value: "7", suit: "Hearts", image: "../cards/H7.png"},
-     {value: "8", suit: "Hearts", image: "../cards/H8.png"},
-     {value: "9", suit: "Hearts", image: "../cards/H9.png"},
-     {value: "10", suit: "Hearts", image: "../cards/H10.png"},
-     {value: "Jack", suit: "Hearts", image: "../cards/H11.png"},
-     {value: "Queen", suit: "Hearts", image: "../cards/H12.png"},
-     {value: "King", suit: "Hearts", image: "../cards/H13.png"},
-     {value: "Ace", suit: "Spades", image: "../cards/C1.png"},
-     {value: "2", suit: "Spades", image: "../cards/C2.png"},
-     {value: "3", suit: "Spades", image: "../cards/C3.png"},
-     {value: "4", suit: "Spades", image: "../cards/C4.png"},
-     {value: "5", suit: "Spades", image: "../cards/C5.png"},
-     {value: "6", suit: "Spades", image: "../cards/C6.png"},
-     {value: "7", suit: "Spades", image: "../cards/C7.png"},
-     {value: "8", suit: "Spades", image: "../cards/C8.png"},
-     {value: "9", suit: "Spades", image: "../cards/C9.png"},
-     {value: "10", suit: "Spades", image: "../cards/C10.png"},
-     {value: "Jack", suit: "Spades", image: "../cards/C11.png"},
-     {value: "Queen", suit: "Spades", image: "../cards/C12.png"},
-     {value: "King", suit: "Spades", image: "../cards/C13.png"},
- ];
+       var cards = ["Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"];
+       var suits = ["Diamonds", "Hearts", "Spades", "Clubs"];
 
 
- function generateRandomCard() {
-     var randomCardIndex = Math.floor(Math.random() * cards.length);
-     var randomCard = cards[randomCardIndex];
-     var cardOutput = document.getElementById("cardOutput");
-     cardOutput.innerHTML = '<img src="' + randomCard.image + '" alt="' + randomCard.value + ' of ' + randomCard.suit + '">';
- }
+       function generateRandomCard() {
+           var randomCard = cards[Math.floor(Math.random() * cards.length)];
+           var randomSuit = suits[Math.floor(Math.random() * suits.length)];
+           var cardOutput = document.getElementById("cardOutput");
+           cardOutput.textContent = randomCard + " of " + randomSuit;
+       }
 </script>
 </body>
-</html>
 
-<p><img src="../images/FullDeck.png" alt="Q16" /></p>
+</body></html>
 
       </div>
     </main><footer class="site-footer h-card">
