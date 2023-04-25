@@ -69,26 +69,48 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <!DOCTYPE html>
-<html>
-<head>
-    <title>SPIN THE WHEEL</title>
-</head>
-<body>
-    <button onclick="generateRandomImage()">Spin the Wheel</button>
-    <img id="imageOutput" src="" alt="Random Image">
+        <style>
+#wheel {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: linear-gradient(to right, blue 50%, red 50%);
+    transform-origin: 50% 50%;
+    transition: transform 3s ease-in-out;
+  }
+  
+  .spin {
+    transform: rotate(720deg);
+  }
 
-<script>
-    function generateRandomImage() {
-        var images = ["red.jpg", "blue.jpg", "green.jpg", "yellow.jpg"];
-        var randomImage = images[Math.floor(Math.random() * images.length)];
-        var imageOutput = document.getElementById("imageOutput");
-        imageOutput.src = randomImage;
-    }
-</script>
-</body>
+</style>
+
+
+<html>
+  <head>
+    <title>Wheel Spin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="wheel"></div>
+    <button id="spin-btn">Spin</button>
+    <script src="script.js"></script>
+  </body>
 </html>
 
+<script>
+
+const wheel = document.getElementById("wheel");
+const spinBtn = document.getElementById("spin-btn");
+
+spinBtn.addEventListener("click", () => {
+  wheel.classList.add("spin");
+  setTimeout(() => {
+    wheel.classList.remove("spin");
+  }, 3000);
+});
+
+</script>
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
