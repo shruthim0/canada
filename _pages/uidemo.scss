@@ -1,0 +1,57 @@
+// features used: variables, color functions (darken,)
+
+// Variables
+$primary-color: #4CAF50;
+$secondary-color: #2196F3;
+$text-color: #333;
+$button-border-radius: 4px;
+$button-padding: 8px 16px;
+$button-font-size: 16px;
+$button-font-weight: bold;
+
+// Mixins
+@mixin button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+}
+
+// Buttons
+.button {
+  @include button($primary-color, $text-color);
+}
+
+.secondary-button {
+  @include button($secondary-color, $text-color);
+}
+
+// Titles and subtitles
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: $text-color;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  color: $secondary-color;
+}
+
+// Loop
+@for $i from 1 through 3 {
+  .box-#{$i} {
+    width: 100px * $i;
+    height: 100px * $i;
+    background-color: $secondary-color;
+    margin: 20px;
+    float: left;
+  }
+}
