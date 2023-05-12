@@ -1,4 +1,7 @@
-# Passion Project Wire Frame
+---
+title: Passion Project Wire Frame
+layout: base
+---
 
 
 ![]({{site.baseurl}}/images/1.png)
