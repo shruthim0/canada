@@ -80,7 +80,9 @@ window.onload = wrap_img;
   <div id="scores">
     <h2>Scores:</h2>
     <ul id="score-list"></ul>
-    <button onclick="updateScores()">Update Scores</button>
+    <button onclick="increaseScore(0, 1)">Increase Score 1</button>
+    <button onclick="increaseScore(1, 2)">Increase Score 2</button>
+    <button onclick="increaseScore(2, 3)">Increase Score 3</button>
   </div>
 
   <script>
@@ -91,24 +93,32 @@ window.onload = wrap_img;
       { name: 'Player 3', score: 0 },
     ];
 
-    // Function to update scores and display them
-    function updateScores() {
-      // Increase the scores of all players
-      scores.forEach(function(player) {
-        player.score++;
+    // Function to increase the score of a specific player by a given amount
+    function increaseScore(index, amount) {
+      if (index >= 0 && index < scores.length) {
+        scores[index].score += amount;
+        updateScoreList();
+      }
+    }
+
+    // Function to update the score list
+    function updateScoreList() {
+      scores.sort(function(a, b) {
+        return b.score - a.score;
       });
 
-      // Clear the existing scores
       var scoreList = document.getElementById("score-list");
       scoreList.innerHTML = '';
 
-      // Display the updated scores
-      scores.forEach(function(player) {
+      scores.forEach(function(player, index) {
         var listItem = document.createElement("li");
-        listItem.textContent = player.name + ': ' + player.score;
+        listItem.textContent = (index + 1) + '. ' + player.name + ': ' + player.score;
         scoreList.appendChild(listItem);
       });
     }
+
+    // Initial update of the score list
+    updateScoreList();
   </script>
 </body>
 </html>
