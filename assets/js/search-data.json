@@ -237,6 +237,17 @@
 
   
       ,"page1": {
+          "title": "College",
+          "content": "&lt;!DOCTYPE html&gt; . Score Updater . Score Updater . Scores: . . Update Scores .",
+          "url": "https://shruthim0.github.io/canada/College/",
+          "relUrl": "/College/",
+          "date": ""
+      }
+      
+  
+
+  
+      ,"page2": {
           "title": "Dice Roll",
           "content": "Roll .",
           "url": "https://shruthim0.github.io/canada/diceroll/",
@@ -249,7 +260,7 @@
   
 
   
-      ,"page3": {
+      ,"page4": {
           "title": "Sass Demo",
           "content": "Welcome . Get ready for the day! . What would you like to check . Today&#39;s Weather Today&#39;s Horoscope Today&#39;s News . &lt;/script&gt; .",
           "url": "https://shruthim0.github.io/canada/sassdemo/",
@@ -268,7 +279,7 @@
   
 
   
-      ,"page7": {
+      ,"page8": {
           "title": "Spin the Wheel",
           "content": "Random Wheel Spinner . Spin .",
           "url": "https://shruthim0.github.io/canada/wheel/",
@@ -293,7 +304,7 @@
   
 
   
-      ,"page13": {
+      ,"page14": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://shruthim0.github.io/canada/robots.txt",
