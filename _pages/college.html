@@ -1,0 +1,48 @@
+---
+layout: base
+permalink: /College/
+title: College
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Score Updater</title>
+</head>
+<body>
+  <h1>Score Updater</h1>
+
+  <div id="scores">
+    <h2>Scores:</h2>
+    <ul id="score-list"></ul>
+    <button onclick="updateScores()">Update Scores</button>
+  </div>
+
+  <script>
+    // Array of scores
+    var scores = [
+      { name: 'Player 1', score: 0 },
+      { name: 'Player 2', score: 0 },
+      { name: 'Player 3', score: 0 },
+    ];
+
+    // Function to update scores and display them
+    function updateScores() {
+      // Increase the scores of all players
+      scores.forEach(function(player) {
+        player.score++;
+      });
+
+      // Clear the existing scores
+      var scoreList = document.getElementById("score-list");
+      scoreList.innerHTML = '';
+
+      // Display the updated scores
+      scores.forEach(function(player) {
+        var listItem = document.createElement("li");
+        listItem.textContent = player.name + ': ' + player.score;
+        scoreList.appendChild(listItem);
+      });
+    }
+  </script>
+</body>
+</html>
