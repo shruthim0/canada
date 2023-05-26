@@ -1,0 +1,45 @@
+---
+layout: base
+permalink: /CollegeFinder/
+title: College Finder
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Button Score Example</title>
+    <script>
+      // Define an array of objects with scores
+      var scores = [
+        { name: "Player 1", score: 0 },
+        { name: "Player 2", score: 0 },
+        { name: "Player 3", score: 0 }
+      ];
+
+      // Function to update the score when the button is clicked
+      function updateScore(index) {
+        scores[index].score += 1; // Increase the score by 1 (you can change this value as needed)
+        displayScores(); // Update the displayed scores
+      }
+
+      // Function to display the scores on the webpage
+      function displayScores() {
+        var output = "";
+        for (var i = 0; i < scores.length; i++) {
+          output += scores[i].name + ": " + scores[i].score + "<br>";
+        }
+        document.getElementById("scoreboard").innerHTML = output;
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Scoreboard</h1>
+    <div id="scoreboard"></div>
+    <button onclick="updateScore(0)">Increase Player 1 Score</button>
+    <button onclick="updateScore(1)">Increase Player 2 Score</button>
+    <button onclick="updateScore(2)">Increase Player 3 Score</button>
+    <script>
+      displayScores(); // Initial display of scores
+    </script>
+  </body>
+</html>
