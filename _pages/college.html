@@ -23,50 +23,10 @@ title: College
     </style>
 </head>
 <body>
-    <table>
+    <table id="scoreboard">
         <tr>
             <th>UC School</th>
             <th>Score</th>
-        </tr>
-        <tr>
-            <td>UC Berkeley</td>
-            <td id="score1">0</td>
-        </tr>
-        <tr>
-            <td>UC Davis</td>
-            <td id="score2">0</td>
-        </tr>
-        <tr>
-            <td>UC Irvine</td>
-            <td id="score3">0</td>
-        </tr>
-        <tr>
-            <td>UC Los Angeles</td>
-            <td id="score4">0</td>
-        </tr>
-        <tr>
-            <td>UC Merced</td>
-            <td id="score5">0</td>
-        </tr>
-        <tr>
-            <td>UC Riverside</td>
-            <td id="score6">0</td>
-        </tr>
-        <tr>
-            <td>UC San Diego</td>
-            <td id="score7">0</td>
-        </tr>
-        <tr>
-            <td>UC San Francisco</td>
-            <td id="score8">0</td>
-        </tr>
-        <tr>
-            <td>UC Santa Barbara</td>
-            <td id="score9">0</td>
-        </tr>
-        <tr>
-            <td>UC Santa Cruz</td>
-            <td id="score10">0</td>
         </tr>
     </table>
 
@@ -111,7 +71,7 @@ title: College
 
         // Function to update the scoreboard table with the selected UC schools and their scores
         function updateScoreboard() {
-            var scoreboardTable = document.querySelector("table");
+            var scoreboardTable = document.getElementById("scoreboard");
             scoreboardTable.innerHTML = ""; // Clear the existing table
 
             var headerRow = document.createElement("tr");
@@ -124,8 +84,7 @@ title: College
             headerRow.appendChild(headerScore);
             scoreboardTable.appendChild(headerRow);
 
-            selectedSchools.forEach(function (index) {
-                var school = ucSchools[index];
+            ucSchools.forEach(function (school) {
                 var schoolRow = document.createElement("tr");
                 var schoolName = document.createElement("td");
                 schoolName.textContent = school.name;
