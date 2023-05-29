@@ -23,89 +23,92 @@ title: College
     </style>
 </head>
 <body>
-    <table id="scoreboard">
+    <table>
         <tr>
             <th>UC School</th>
             <th>Score</th>
         </tr>
+        <tr>
+            <td>UC Berkeley</td>
+            <td id="score1">0</td>
+        </tr>
+        <tr>
+            <td>UC Davis</td>
+            <td id="score2">0</td>
+        </tr>
+        <tr>
+            <td>UC Irvine</td>
+            <td id="score3">0</td>
+        </tr>
+        <tr>
+            <td>UC Los Angeles</td>
+            <td id="score4">0</td>
+        </tr>
+        <tr>
+            <td>UC Merced</td>
+            <td id="score5">0</td>
+        </tr>
+        <tr>
+            <td>UC Riverside</td>
+            <td id="score6">0</td>
+        </tr>
+        <tr>
+            <td>UC San Diego</td>
+            <td id="score7">0</td>
+        </tr>
+        <tr>
+            <td>UC San Francisco</td>
+            <td id="score8">0</td>
+        </tr>
+        <tr>
+            <td>UC Santa Barbara</td>
+            <td id="score9">0</td>
+        </tr>
+        <tr>
+            <td>UC Santa Cruz</td>
+            <td id="score10">0</td>
+        </tr>
     </table>
 
     <div>
-        <button onclick="addToScore([2, 1, 6])">Increase 1</button>
-        <button onclick="addToScore([0, 4, 9])">Increase 2</button>
-        <button onclick="addToScore([3, 7, 8])">Increase 3</button>
-        <button onclick="addToScore([5, 6, 10])">Increase 4</button>
-        <button onclick="addToScore([1, 3, 7])">Increase 5</button>
-        <button onclick="addToScore([0, 2, 5])">Increase 6</button>
-    </div>
-    
-    <div>
-        <button onclick="submitScore()">Submit</button>
+        <button onclick="increaseScore([3, 0, 6])">Increase 1</button>
+        <button onclick="increaseScore([1, 5, 8])">Increase 2</button>
+        <button onclick="increaseScore([4, 2, 7])">Increase 3</button>
+        <button onclick="increaseScore([1, 3, 9])">Increase 4</button>
+        <button onclick="increaseScore([2, 6, 8])">Increase 5</button>
+        <button onclick="increaseScore([4, 5, 10])">Increase 6</button>
     </div>
 
     <script>
         // Array of UC Schools
         var ucSchools = [
-            { name: "UC Berkeley", score: 0 },
-            { name: "UC Davis", score: 0 },
-            { name: "UC Irvine", score: 0 },
-            { name: "UC Los Angeles", score: 0 },
-            { name: "UC Merced", score: 0 },
-            { name: "UC Riverside", score: 0 },
-            { name: "UC San Diego", score: 0 },
-            { name: "UC San Francisco", score: 0 },
-            { name: "UC Santa Barbara", score: 0 },
-            { name: "UC Santa Cruz", score: 0 }
+            { name: "UC Berkeley", score: 1 },
+            { name: "UC Davis", score: 2 },
+            { name: "UC Irvine", score: 3 },
+            { name: "UC Los Angeles", score: 4 },
+            { name: "UC Merced", score: 5 },
+            { name: "UC Riverside", score: 6 },
+            { name: "UC San Diego", score: 7 },
+            { name: "UC San Francisco", score: 8 },
+            { name: "UC Santa Barbara", score: 9 },
+            { name: "UC Santa Cruz", score:  }
         ];
 
-        var selectedSchools = []; // Array to store the selected UC schools
-
-        // Function to add selected UC schools to the selectedSchools array
-        function addToScore(schoolIndexes) {
+        // Function to increase the score of selected UC Schools and update the scoreboard
+        function increaseScore(schoolIndexes) {
             schoolIndexes.forEach(function (index) {
-                if (!selectedSchools.includes(index)) {
-                    selectedSchools.push(index);
-                }
-            });
-        }
-
-        // Function to update the scoreboard table with the selected UC schools and their scores
-        function updateScoreboard() {
-            var scoreboardTable = document.getElementById("scoreboard");
-            scoreboardTable.innerHTML = ""; // Clear the existing table
-
-            var headerRow = document.createElement("tr");
-            var headerSchool = document.createElement("th");
-            headerSchool.textContent = "UC School";
-            var headerScore = document.createElement("th");
-            headerScore.textContent = "Score";
-
-            headerRow.appendChild(headerSchool);
-            headerRow.appendChild(headerScore);
-            scoreboardTable.appendChild(headerRow);
-
-            ucSchools.forEach(function (school) {
-                var schoolRow = document.createElement("tr");
-                var schoolName = document.createElement("td");
-                schoolName.textContent = school.name;
-                var schoolScore = document.createElement("td");
-                schoolScore.textContent = school.score;
-
-                schoolRow.appendChild(schoolName);
-                schoolRow.appendChild(schoolScore);
-                scoreboardTable.appendChild(schoolRow);
-            });
-        }
-
-        // Function to submit the selected scores and update the scoreboard table
-        function submitScore() {
-            selectedSchools.forEach(function (index) {
                 ucSchools[index].score++;
             });
 
             ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
             updateScoreboard();
-            selectedSchools = []; // Clear the selected schools
+        }
+
+        // Function to update the scoreboard table with the sorted UC Schools array
+        function updateScoreboard() {
+            for (let i = 0; i < ucSchools.length; i++) {
+                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+            }
         }
 
         // Initial scoreboard update
