@@ -74,13 +74,14 @@ window.onload = wrap_img;
 <head>
     <title>Scoreboard</title>
     <style>
-        .player {
+        table {
+            border-collapse: collapse;
             margin-bottom: 10px;
         }
-        .score {
-            display: inline-block;
-            width: 30px;
+        th, td {
+            padding: 5px;
             text-align: center;
+            border: 1px solid black;
         }
         button {
             margin-right: 10px;
@@ -88,19 +89,28 @@ window.onload = wrap_img;
     </style>
 </head>
 <body>
-    <div class="player">
-        <span>Player 1:</span>
-        <span class="score" id="score1">0</span>
+    <table>
+        <tr>
+            <th>Player</th>
+            <th>Score</th>
+        </tr>
+        <tr>
+            <td>Player 1</td>
+            <td id="score1">0</td>
+        </tr>
+        <tr>
+            <td>Player 2</td>
+            <td id="score2">0</td>
+        </tr>
+        <tr>
+            <td>Player 3</td>
+            <td id="score3">0</td>
+        </tr>
+    </table>
+
+    <div>
         <button onclick="increaseScore(0)">+</button>
-    </div>
-    <div class="player">
-        <span>Player 2:</span>
-        <span class="score" id="score2">0</span>
         <button onclick="increaseScore(1)">+</button>
-    </div>
-    <div class="player">
-        <span>Player 3:</span>
-        <span class="score" id="score3">0</span>
         <button onclick="increaseScore(2)">+</button>
     </div>
 
@@ -112,10 +122,18 @@ window.onload = wrap_img;
             { name: "Player 3", score: 0 }
         ];
 
-        // Function to increase the score of a player
+        // Function to increase the score of a player and sort the array
         function increaseScore(index) {
             players[index].score++;
-            document.getElementById("score" + (index + 1)).textContent = players[index].score;
+            players.sort((a, b) => b.score - a.score); // Sort by score in descending order
+            updateScoreboard();
+        }
+
+        // Function to update the scoreboard table with the sorted array
+        function updateScoreboard() {
+            for (let i = 0; i < players.length; i++) {
+                document.getElementById("score" + (i + 1)).textContent = players[i].score;
+            }
         }
     </script>
 </body>
