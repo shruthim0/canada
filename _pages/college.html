@@ -123,6 +123,7 @@ title: College
             }
 
             ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+            updateScoreboard(); // Update the scoreboard table
         }
 
         // Function to update the scoreboard table with the sorted UC Schools array
@@ -131,14 +132,6 @@ title: College
                 document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
             }
         }
-
-        // Submit button event handler
-        document.getElementById("submitBtn").addEventListener("click", function() {
-            updateScoreboard();
-        });
-
-        // Initial scoreboard update
-        updateScoreboard();
     </script>
 </body>
 </html>
