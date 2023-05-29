@@ -64,17 +64,19 @@ title: College
 
         // Function to increase the score of a player and sort the array
         function increaseScore(scoreId) {
-            var index = parseInt(scoreId.substring(5)) - 1; // Extract the player index from the score ID
-            players[index].score++;
-            players.sort((a, b) => {
-                if (sortAscending) {
-                    return a.score - b.score; // Sort in ascending order
-                } else {
-                    return b.score - a.score; // Sort in descending order
-                }
-            });
-            updateScoreboard();
-        }
+  var index = parseInt(scoreId.substring(5)) - 1; // Extract the player index from the score ID
+  players[index].score++;
+  players.sort((a, b) => {
+    if (a.score === b.score) {
+      return players.indexOf(a) - players.indexOf(b); // Preserve original order for tied scores
+    } else if (sortAscending) {
+      return a.score - b.score; // Sort in ascending order
+    } else {
+      return b.score - a.score; // Sort in descending order
+    }
+  });
+  updateScoreboard();
+}
 
         // Function to toggle the sorting order
         function toggleSortOrder() {
