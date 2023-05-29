@@ -94,32 +94,35 @@ title: College
             { name: "UC Santa Cruz", score: 0 }
         ];
 
-        // Function to increase the score of UC Schools and update the table
+        // Function to increase the score of specified UC Schools and update the table
         function increaseScore(buttonIndex) {
-            var schoolsToIncrease = [];
-
-            // Determine which UC Schools to increase based on the button index
             if (buttonIndex === 0) {
-                schoolsToIncrease = [0, 1, 2]; // UC Berkeley, UC Davis, UC Irvine
+                ucSchools[0].score++; // UC Berkeley
+                ucSchools[1].score++; // UC Davis
+                ucSchools[2].score++; // UC Irvine
             } else if (buttonIndex === 1) {
-                schoolsToIncrease = [3, 4, 5]; // UC Los Angeles, UC Merced, UC Riverside
+                ucSchools[3].score++; // UC Los Angeles
+                ucSchools[4].score++; // UC Merced
+                ucSchools[5].score++; // UC Riverside
             } else if (buttonIndex === 2) {
-                schoolsToIncrease = [6, 7, 8]; // UC San Diego, UC San Francisco, UC Santa Barbara
+                ucSchools[6].score++; // UC San Diego
+                ucSchools[7].score++; // UC San Francisco
+                ucSchools[8].score++; // UC Santa Barbara
             } else if (buttonIndex === 3) {
-                schoolsToIncrease = [1, 3, 5]; // UC Davis, UC Los Angeles, UC Riverside
+                ucSchools[0].score++; // UC Berkeley
+                ucSchools[3].score++; // UC Los Angeles
+                ucSchools[5].score++; // UC Riverside
             } else if (buttonIndex === 4) {
-                schoolsToIncrease = [2, 4, 6]; // UC Irvine, UC Merced, UC San Diego
+                ucSchools[1].score++; // UC Davis
+                ucSchools[4].score++; // UC Merced
+                ucSchools[6].score++; // UC San Diego
             } else if (buttonIndex === 5) {
-                schoolsToIncrease = [7, 8, 9]; // UC San Francisco, UC Santa Barbara, UC Santa Cruz
+                ucSchools[7].score++; // UC San Francisco
+                ucSchools[8].score++; // UC Santa Barbara
+                ucSchools[9].score++; // UC Santa Cruz
             }
 
-            // Increase the score of the selected UC Schools
-            schoolsToIncrease.forEach(function (index) {
-                ucSchools[index].score++;
-            });
-
             ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
-            updateScoreboard();
         }
 
         // Function to update the scoreboard table with the sorted UC Schools array
@@ -128,6 +131,11 @@ title: College
                 document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
             }
         }
+
+        // Submit button event handler
+        document.getElementById("submitBtn").addEventListener("click", function() {
+            updateScoreboard();
+        });
 
         // Initial scoreboard update
         updateScoreboard();
