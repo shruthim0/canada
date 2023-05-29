@@ -92,7 +92,11 @@ window.onload = wrap_img;
     <table>
         <tr>
             <th>Player</th>
-            <th>Score</th>
+            <th>
+                Score
+                <button onclick="toggleSortOrder()">▲</button>
+                <button onclick="toggleSortOrder()">▼</button>
+            </th>
         </tr>
         <tr>
             <td>Player 1</td>
@@ -109,9 +113,9 @@ window.onload = wrap_img;
     </table>
 
     <div>
-        <button onclick="increaseScore(0)">+</button>
-        <button onclick="increaseScore(1)">+</button>
-        <button onclick="increaseScore(2)">+</button>
+        <button onclick="increaseScore('score1')">+</button>
+        <button onclick="increaseScore('score2')">+</button>
+        <button onclick="increaseScore('score3')">+</button>
     </div>
 
     <script>
@@ -121,20 +125,59 @@ window.onload = wrap_img;
             { name: "Player 2", score: 0 },
             { name: "Player 3", score: 0 }
         ];
+        
+        var sortAscending = true; // Variable to track the sorting order
 
         // Function to increase the score of a player and sort the array
-        function increaseScore(index) {
+        function increaseScore(scoreId) {
+            var index = parseInt(scoreId.substring(5)) - 1; // Extract the player index from the score ID
             players[index].score++;
-            players.sort((a, b) => b.score - a.score); // Sort by score in descending order
+            players.sort((a, b) => {
+                if (sortAscending) {
+                    return a.score - b.score; // Sort in ascending order
+                } else {
+                    return b.score - a.score; // Sort in descending order
+                }
+            });
+            updateScoreboard();
+        }
+
+        // Function to toggle the sorting order
+        function toggleSortOrder() {
+            sortAscending = !sortAscending;
             updateScoreboard();
         }
 
         // Function to update the scoreboard table with the sorted array
         function updateScoreboard() {
-            for (let i = 0; i < players.length; i++) {
-                document.getElementById("score" + (i + 1)).textContent = players[i].score;
-            }
+            var scoreboardTable = document.querySelector("table");
+            scoreboardTable.innerHTML = ""; // Clear the existing table
+
+            var headerRow = document.createElement("tr");
+            var headerPlayer = document.createElement("th");
+            headerPlayer.textContent = "Player";
+            var headerScore = document.createElement("th");
+            headerScore.textContent = "Score";
+
+            headerRow.appendChild(headerPlayer);
+            headerRow.appendChild(headerScore);
+            scoreboardTable.appendChild(headerRow);
+
+            players.forEach(function (player) {
+                var playerRow = document.createElement("tr");
+                var playerName = document.createElement("td");
+                playerName.textContent = player.name;
+                var playerScore = document.createElement("td");
+                playerScore.textContent = player.score;
+
+                playerRow.appendChild(playerName);
+                playerRow.appendChild(playerScore);
+                scoreboardTable.appendChild(playerRow);
+            });
         }
+
+        // Initial scoreboard update
+        updateScoreboard();
     </script>
 </body>
 </html>

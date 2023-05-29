@@ -238,7 +238,7 @@
   
       ,"page1": {
           "title": "College",
-          "content": "&lt;!DOCTYPE html&gt; . Scoreboard . Player Score . Player 1 | 0 | . Player 2 | 0 | . Player 3 | 0 | . + + + .",
+          "content": "&lt;!DOCTYPE html&gt; . Scoreboard . Player Score ▲ ▼ . Player 1 | 0 | . Player 2 | 0 | . Player 3 | 0 | . + + + .",
           "url": "https://shruthim0.github.io/canada/College/",
           "relUrl": "/College/",
           "date": ""
