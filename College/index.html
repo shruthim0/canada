@@ -137,12 +137,16 @@ window.onload = wrap_img;
     </table>
 
     <div>
-        <button onclick="increaseScore(['UC Berkeley', 'UC Davis', 'UC Irvine'])">Increase Group 1</button>
-        <button onclick="increaseScore(['UC Los Angeles', 'UC Merced', 'UC Riverside'])">Increase Group 2</button>
-        <button onclick="increaseScore(['UC San Diego', 'UC San Francisco', 'UC Santa Barbara'])">Increase Group 3</button>
-        <button onclick="increaseScore(['UC Berkeley', 'UC Los Angeles', 'UC Riverside'])">Increase Group 4</button>
-        <button onclick="increaseScore(['UC Davis', 'UC Merced', 'UC San Diego'])">Increase Group 5</button>
-        <button onclick="increaseScore(['UC Riverside', 'UC San Francisco', 'UC Santa Cruz'])">Increase Group 6</button>
+        <button onclick="increaseScore('UC Santa Cruz')" onclick="increaseScore('UC Berkeley')" onclick="increaseScore('UC Davis')" onclick="increaseScore('UC Irvine')">Increase UC Berkeley</button>
+        <button onclick="increaseScore('UC Davis')">Increase UC Davis</button>
+        <button onclick="increaseScore('UC Irvine')">Increase UC Irvine</button>
+        <button onclick="increaseScore('UC Los Angeles')">Increase UC Los Angeles</button>
+        <button onclick="increaseScore('UC Merced')">Increase UC Merced</button>
+        <button onclick="increaseScore('UC Riverside')">Increase UC Riverside</button>
+        <button onclick="increaseScore('UC San Diego')">Increase UC San Diego</button>
+        <button onclick="increaseScore('UC San Francisco')">Increase UC San Francisco</button>
+        <button onclick="increaseScore('UC Santa Barbara')">Increase UC Santa Barbara</button>
+        <button onclick="increaseScore('UC Santa Cruz')">Increase UC Santa Cruz</button>
     </div>
 
     <script>
@@ -160,15 +164,12 @@ window.onload = wrap_img;
             { name: "UC Santa Cruz", score: 0 }
         ];
 
-        // Function to increase the score of the specified UC Schools and update the table
-        function increaseScore(ucSchoolsToUpdate) {
-            for (let i = 0; i < ucSchoolsToUpdate.length; i++) {
-                const ucSchoolName = ucSchoolsToUpdate[i];
-                for (let j = 0; j < ucSchools.length; j++) {
-                    if (ucSchools[j].name === ucSchoolName) {
-                        ucSchools[j].score++;
-                        break;
-                    }
+        // Function to increase the score of the specified UC School and update the table
+        function increaseScore(ucSchoolName) {
+            for (let i = 0; i < ucSchools.length; i++) {
+                if (ucSchools[i].name === ucSchoolName) {
+                    ucSchools[i].score++;
+                    break;
                 }
             }
 
