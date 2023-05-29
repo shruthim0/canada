@@ -71,16 +71,16 @@ title: College
     </table>
 
     <div>
-        <button onclick="increaseScore('score1')">Increase UC Berkeley</button>
-        <button onclick="increaseScore('score2')">Increase UC Davis</button>
-        <button onclick="increaseScore('score3')">Increase UC Irvine</button>
-        <button onclick="increaseScore('score4')">Increase UC Los Angeles</button>
-        <button onclick="increaseScore('score5')">Increase UC Merced</button>
-        <button onclick="increaseScore('score6')">Increase UC Riverside</button>
-        <button onclick="increaseScore('score7')">Increase UC San Diego</button>
-        <button onclick="increaseScore('score8')">Increase UC San Francisco</button>
-        <button onclick="increaseScore('score9')">Increase UC Santa Barbara</button>
-        <button onclick="increaseScore('score10')">Increase UC Santa Cruz</button>
+        <button onclick="increaseScore(0)">Increase UC Berkeley</button>
+        <button onclick="increaseScore(1)">Increase UC Davis</button>
+        <button onclick="increaseScore(2)">Increase UC Irvine</button>
+        <button onclick="increaseScore(3)">Increase UC Los Angeles</button>
+        <button onclick="increaseScore(4)">Increase UC Merced</button>
+        <button onclick="increaseScore(5)">Increase UC Riverside</button>
+        <button onclick="increaseScore(6)">Increase UC San Diego</button>
+        <button onclick="increaseScore(7)">Increase UC San Francisco</button>
+        <button onclick="increaseScore(8)">Increase UC Santa Barbara</button>
+        <button onclick="increaseScore(9)">Increase UC Santa Cruz</button>
         <br>
         <button onclick="submitScores()">Submit</button>
     </div>
@@ -101,9 +101,9 @@ title: College
         ];
 
         // Function to increase the score of the specified UC School
-        function increaseScore(scoreId) {
-            const schoolIndex = parseInt(scoreId.substring(5)) - 1;
-            ucSchools[schoolIndex].score++;
+        function increaseScore(index) {
+            ucSchools[index].score++;
+            document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
         }
 
         // Function to submit the scores and update the table
