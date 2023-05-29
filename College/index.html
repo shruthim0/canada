@@ -137,12 +137,16 @@ window.onload = wrap_img;
     </table>
 
     <div>
-        <button onclick="increaseScore(0)">Increase 1</button>
-        <button onclick="increaseScore(1)">Increase 2</button>
-        <button onclick="increaseScore(2)">Increase 3</button>
-        <button onclick="increaseScore(3)">Increase 4</button>
-        <button onclick="increaseScore(4)">Increase 5</button>
-        <button onclick="increaseScore(5)">Increase 6</button>
+        <button onclick="increaseScore('UC Berkeley')">Increase UC Berkeley</button>
+        <button onclick="increaseScore('UC Davis')">Increase UC Davis</button>
+        <button onclick="increaseScore('UC Irvine')">Increase UC Irvine</button>
+        <button onclick="increaseScore('UC Los Angeles')">Increase UC Los Angeles</button>
+        <button onclick="increaseScore('UC Merced')">Increase UC Merced</button>
+        <button onclick="increaseScore('UC Riverside')">Increase UC Riverside</button>
+        <button onclick="increaseScore('UC San Diego')">Increase UC San Diego</button>
+        <button onclick="increaseScore('UC San Francisco')">Increase UC San Francisco</button>
+        <button onclick="increaseScore('UC Santa Barbara')">Increase UC Santa Barbara</button>
+        <button onclick="increaseScore('UC Santa Cruz')">Increase UC Santa Cruz</button>
     </div>
 
     <script>
@@ -160,32 +164,13 @@ window.onload = wrap_img;
             { name: "UC Santa Cruz", score: 0 }
         ];
 
-        // Function to increase the score of specified UC Schools and update the table
-        function increaseScore(buttonIndex) {
-            if (buttonIndex === 0) {
-                ucSchools[0].score++; // UC Berkeley
-                ucSchools[1].score++; // UC Davis
-                ucSchools[2].score++; // UC Irvine
-            } else if (buttonIndex === 1) {
-                ucSchools[3].score++; // UC Los Angeles
-                ucSchools[4].score++; // UC Merced
-                ucSchools[5].score++; // UC Riverside
-            } else if (buttonIndex === 2) {
-                ucSchools[6].score++; // UC San Diego
-                ucSchools[7].score++; // UC San Francisco
-                ucSchools[8].score++; // UC Santa Barbara
-            } else if (buttonIndex === 3) {
-                ucSchools[0].score++; // UC Berkeley
-                ucSchools[3].score++; // UC Los Angeles
-                ucSchools[5].score++; // UC Riverside
-            } else if (buttonIndex === 4) {
-                ucSchools[1].score++; // UC Davis
-                ucSchools[4].score++; // UC Merced
-                ucSchools[6].score++; // UC San Diego
-            } else if (buttonIndex === 5) {
-                ucSchools[5].score++; // UC Riverside
-                ucSchools[7].score++; // UC San Francisco
-                ucSchools[9].score++; // UC Santa Cruz
+        // Function to increase the score of the specified UC School and update the table
+        function increaseScore(ucSchoolName) {
+            for (let i = 0; i < ucSchools.length; i++) {
+                if (ucSchools[i].name === ucSchoolName) {
+                    ucSchools[i].score++;
+                    break;
+                }
             }
 
             ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
@@ -201,7 +186,6 @@ window.onload = wrap_img;
     </script>
 </body>
 </html>
-
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
