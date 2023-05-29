@@ -71,12 +71,14 @@ title: College
     </table>
 
     <div>
-        <button onclick="increaseScore(['UC Berkeley', 'UC Davis', 'UC Irvine'])">Increase UC Berkeley</button>
-        <button onclick="increaseScore(['UC Los Angeles', 'UC Merced', 'UC Riverside'])">Increase UC Los Angeles</button>
-        <button onclick="increaseScore(['UC San Diego', 'UC San Francisco', 'UC Santa Barbara'])">Increase UC San Diego</button>
-        <button onclick="increaseScore(['UC Berkeley', 'UC Los Angeles', 'UC Riverside'])">Increase UC Riverside</button>
-        <button onclick="increaseScore(['UC Davis', 'UC Merced', 'UC San Diego'])">Increase UC Davis</button>
-        <button onclick="increaseScore(['UC Riverside', 'UC San Francisco', 'UC Santa Cruz'])">Increase UC Santa Cruz</button>
+        <button onclick="increaseScore(['UC Berkeley', 'UC Davis', 'UC Irvine'])">Increase UC Berkeley, UC Davis, UC Irvine</button>
+        <button onclick="increaseScore(['UC Los Angeles', 'UC Merced', 'UC Riverside'])">Increase UC Los Angeles, UC Merced, UC Riverside</button>
+        <button onclick="increaseScore(['UC San Diego', 'UC San Francisco', 'UC Santa Barbara'])">Increase UC San Diego, UC San Francisco, UC Santa Barbara</button>
+        <button onclick="increaseScore(['UC Berkeley', 'UC Los Angeles', 'UC Riverside'])">Increase UC Berkeley, UC Los Angeles, UC Riverside</button>
+        <button onclick="increaseScore(['UC Davis', 'UC Merced', 'UC San Diego'])">Increase UC Davis, UC Merced, UC San Diego</button>
+        <button onclick="increaseScore(['UC Riverside', 'UC San Francisco', 'UC Santa Cruz'])">Increase UC Riverside, UC San Francisco, UC Santa Cruz</button>
+        <br>
+        <button onclick="submitScores()">Submit</button>
     </div>
 
     <script>
@@ -94,7 +96,7 @@ title: College
             { name: "UC Santa Cruz", score: 0 }
         ];
 
-        // Function to increase the score of the specified UC Schools and update the table
+        // Function to increase the score of the specified UC Schools
         function increaseScore(ucSchoolsToUpdate) {
             for (let i = 0; i < ucSchoolsToUpdate.length; i++) {
                 const ucSchoolName = ucSchoolsToUpdate[i];
@@ -105,12 +107,10 @@ title: College
                     }
                 }
             }
-
-            updateScoreboard(); // Update the scoreboard table
         }
 
-        // Function to update the scoreboard table with the sorted UC Schools array
-        function updateScoreboard() {
+        // Function to submit the scores and update the table
+        function submitScores() {
             ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
 
             for (let i = 0; i < ucSchools.length; i++) {
