@@ -80,9 +80,9 @@ window.onload = wrap_img;
   <div id="scores">
     <h2>Scores:</h2>
     <ul id="score-list"></ul>
-    <button onclick="increaseScore(0, [0, 1])">Increase Score 1 & 2</button>
-    <button onclick="increaseScore(1, [1, 2])">Increase Score 2 & 3</button>
-    <button onclick="increaseScore(2, [0, 1])">Increase Score 1 & 2</button>
+    <button onclick="increaseScore([0, 1])">Increase Score 1 & 2</button>
+    <button onclick="increaseScore([1, 2])">Increase Score 2 & 3</button>
+    <button onclick="increaseScore([0])">Increase Score 1</button>
   </div>
 
   <script>
@@ -94,15 +94,13 @@ window.onload = wrap_img;
     ];
 
     // Function to increase the score of specific players by a given amount
-    function increaseScore(index, playerIndices) {
-      if (index >= 0 && index < scores.length) {
-        playerIndices.forEach(function(playerIndex) {
-          if (playerIndex >= 0 && playerIndex < scores.length) {
-            scores[playerIndex].score++;
-          }
-        });
-        updateScoreList();
-      }
+    function increaseScore(playerIndices) {
+      playerIndices.forEach(function(playerIndex) {
+        if (playerIndex >= 0 && playerIndex < scores.length) {
+          scores[playerIndex].score++;
+        }
+      });
+      updateScoreList();
     }
 
     // Function to update the score list
@@ -126,7 +124,6 @@ window.onload = wrap_img;
   </script>
 </body>
 </html>
- 
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
