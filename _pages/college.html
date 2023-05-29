@@ -93,7 +93,7 @@ title: College
             { name: "UC Santa Barbara", score: 0 },
             { name: "UC Santa Cruz", score: 0 }
         ];
-    
+
         // Function to increase the score of the specified UC Schools and update the table
         function increaseScore(ucSchoolsToUpdate) {
             for (let i = 0; i < ucSchoolsToUpdate.length; i++) {
@@ -105,16 +105,18 @@ title: College
                     }
                 }
             }
-    
-            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+
             updateScoreboard(); // Update the scoreboard table
         }
-    
+
         // Function to update the scoreboard table with the sorted UC Schools array
         function updateScoreboard() {
+            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+
             for (let i = 0; i < ucSchools.length; i++) {
                 document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
             }
         }
     </script>
+</body>
 </html>
