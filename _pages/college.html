@@ -192,7 +192,13 @@ title: College
             }
             moveToNextQuestion();
         }
+        function showTable() {
+            var scoreboard = document.getElementById("scoreboard");
+            var questionsDiv = document.querySelector("div[data-aos='fade-middle']");
 
+            scoreboard.style.display = "table";
+            questionsDiv.style.display = "none";
+        }
         // Function to submit the scores and update the table
         function submitScores() {
             ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
@@ -201,7 +207,7 @@ title: College
                 document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
             }
 
-            resetQuestions();
+            showTable();
         }
 
         // Function to move to the next question
