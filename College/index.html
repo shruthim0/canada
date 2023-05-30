@@ -303,19 +303,6 @@ window.onload = wrap_img;
         }
 
         // Function to reset the questions and scores
-        function resetQuestions() {
-            for (let i = 0; i < ucSchools.length; i++) {
-                ucSchools[i].score = 0;
-                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
-            }
-
-            for (let i = 1; i <= 11; i++) {
-                const question = document.getElementById("question" + i);
-                question.style.display = "none";
-            }
-
-            document.getElementById("question1").style.display = "block";
-        }
     </script>
 </body>
 </html>
