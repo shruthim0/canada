@@ -238,7 +238,7 @@
   
       ,"page1": {
           "title": "College",
-          "content": "&lt;!DOCTYPE html&gt; . UC Schools Scoreboard . UC Schools Scoreboard . How big do you want your school to be? . Small Medium Large Which location do you prefer? . Urban Suburban Rural .",
+          "content": "&lt;!DOCTYPE html&gt; . UC Schools Scoreboard . College Finder . Which UC school is located in Berkeley? . UC Berkeley UC Los Angeles UC San Diego Which UC school is located in Irvine? . UC Berkeley UC Irvine UC Davis Which UC school is located in Los Angeles? . UC San Francisco UC Los Angeles UC Santa Barbara Which UC school is located in San Diego? . UC Santa Cruz UC Irvine UC San Diego Which UC school is located in Davis? . UC Berkeley UC Davis UC San Francisco Which UC school is located in Santa Cruz? . UC Santa Barbara UC Santa Cruz UC Riverside Which UC school is located in Santa Barbara? . UC Santa Barbara UC Berkeley UC Merced Which UC school is located in San Francisco? . UC San Diego UC San Francisco UC Riverside Which UC school is located in Riverside? . UC Santa Cruz UC Riverside UC Davis Scoreboard . Rank School Score . | UC Berkeley | | . | UC Irvine | | . | UC Los Angeles | | . .",
           "url": "https://shruthim0.github.io/canada/College/",
           "relUrl": "/College/",
           "date": ""

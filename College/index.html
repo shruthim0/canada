@@ -75,182 +75,203 @@ window.onload = wrap_img;
     <title>UC Schools Scoreboard</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
         }
-        
+
         h2 {
             color: #333;
             text-align: center;
-            margin: 20px 0;
+            margin-top: 20px;
         }
-        
+
         .container {
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .question {
             margin-bottom: 20px;
         }
-        
+
         .question p {
-            margin: 0;
-            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
         }
-        
-        .options {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-        
-        .options button {
-            padding: 10px 20px;
-            margin: 0 5px;
-            font-size: 14px;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 3px;
-            background-color: #333;
+
+        .question button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4285f4;
             color: #fff;
+            font-size: 16px;
             border: none;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        
-        .options button:hover {
-            background-color: #555;
+
+        .question button:hover {
+            background-color: #1a73e8;
         }
-        
-        .options button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
+
         table {
             width: 100%;
-            margin-bottom: 20px;
             border-collapse: collapse;
+            margin-bottom: 20px;
         }
-        
+
         th, td {
             padding: 10px;
             text-align: center;
-            border: 1px solid #333;
+            border: 1px solid #ccc;
         }
-        
+
         th {
-            background-color: #333;
-            color: #fff;
+            background-color: #f2f2f2;
             font-weight: bold;
         }
-        
+
         td:first-child {
             font-weight: bold;
         }
+
+        #scoreTable {
+            display: table;
+        }
     </style>
     <script>
-        var scores = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        var questions = ['How big do you want your school to be?', 'Which location do you prefer?'];
-        var currentQuestionIndex = 0;
+        var scores = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
-        function increaseScore(indices) {
-            for (var i = 0; i < indices.length; i++) {
-                scores[indices[i]]++;
+        function increaseScore(inc) {
+            for (var i = 0; i < inc.length; i++) {
+                scores[inc[i]]++;
             }
         }
 
         function showNextQuestion(questionId) {
-    if (currentQuestionIndex >= questions.length - 1) {
-        displayResults();
-    } else {
-        currentQuestionIndex++;
-        hideAllQuestions();
-        document.getElementById(questionId).style.display = 'block';
-    }
-}
+            var question = document.getElementById(questionId);
+            question.style.display = 'none';
 
-        function hideAllQuestions() {
-            var questionElements = document.getElementsByClassName('question');
-            for (var i = 0; i < questionElements.length; i++) {
-                questionElements[i].style.display = 'none';
+            var nextQuestion = question.nextElementSibling;
+            if (nextQuestion) {
+                nextQuestion.style.display = 'block';
+            } else {
+                showScoreboard();
             }
         }
 
-        function displayResults() {
-    hideAllQuestions();
-    var maxScore = Math.max(...scores);
-    var matchingIndices = [];
-    for (var i = 0; i < scores.length; i++) {
-        if (scores[i] === maxScore) {
-            matchingIndices.push(i);
-        }
-    }
+        function showScoreboard() {
+            var table = document.getElementById('scoreTable');
+            table.style.display = 'block';
 
-    var resultsContainer = document.createElement('div');
-    resultsContainer.classList.add('question');
-    resultsContainer.innerHTML = '<p>Based on your preferences, here are the top UC schools:</p>';
+            var ranks = scores.slice().sort(function(a, b) {
+                return b - a;
+            });
 
-    var table = document.createElement('table');
-    var tableHead = document.createElement('thead');
-    var tableBody = document.createElement('tbody');
-    var tableHeaderRow = document.createElement('tr');
-    tableHeaderRow.innerHTML = '<th>Rank</th><th>UC School</th>';
-    tableHead.appendChild(tableHeaderRow);
+            var rank1 = scores.indexOf(ranks[0]);
+            var rank2 = scores.indexOf(ranks[1]);
+            var rank3 = scores.indexOf(ranks[2]);
 
-    for (var j = 0; j < matchingIndices.length; j++) {
-        var rank = j + 1;
-        var schoolIndex = matchingIndices[j];
-        var schoolName = getUCSchoolName(schoolIndex);
+            document.getElementById('rank1').textContent = rank1 + 1;
+            document.getElementById('score1').textContent = scores[rank1];
 
-        var tableRow = document.createElement('tr');
-        var rankCell = document.createElement('td');
-        rankCell.textContent = rank;
-        var schoolCell = document.createElement('td');
-        schoolCell.textContent = schoolName;
+            document.getElementById('rank2').textContent = rank2 + 1;
+            document.getElementById('score2').textContent = scores[rank2];
 
-        tableRow.appendChild(rankCell);
-        tableRow.appendChild(schoolCell);
-        tableBody.appendChild(tableRow);
-    }
-
-    table.appendChild(tableHead);
-    table.appendChild(tableBody);
-    resultsContainer.appendChild(table);
-
-    document.getElementById('results').appendChild(resultsContainer);
-}
-
-        function getUCSchoolName(index) {
-            var ucSchools = ['UC Berkeley', 'UC Los Angeles', 'UC San Diego', 'UC Santa Barbara', 'UC Irvine', 'UC Davis', 'UC Santa Cruz', 'UC Riverside', 'UC Merced'];
-            return ucSchools[index];
+            document.getElementById('rank3').textContent = rank3 + 1;
+            document.getElementById('score3').textContent = scores[rank3];
         }
     </script>
 </head>
 <body>
     <div class="container">
-        <h2>UC Schools Scoreboard</h2>
-        <div class="question" id="question1">
-            <p>How big do you want your school to be?</p>
-            <div class="options">
-                <button onclick="increaseScore([0, 1, 7]); showNextQuestion('question2')">Small</button>
-                <button onclick="increaseScore([2, 3, 4]); showNextQuestion('question2')">Medium</button>
-                <button onclick="increaseScore([5, 6, 8, 9]); showNextQuestion('question2')">Large</button>
-            </div>
+        <h2>College Finder</h2>
+        <div id="question1" class="question">
+            <p>Which UC school is located in Berkeley?</p>
+            <button onclick="increaseScore([0]); showNextQuestion('question1');">UC Berkeley</button>
+            <button onclick="showNextQuestion('question1');">UC Los Angeles</button>
+            <button onclick="showNextQuestion('question1');">UC San Diego</button>
         </div>
-        <div class="question" id="question2" style="display: none;">
-            <p>Which location do you prefer?</p>
-            <div class="options">
-                <button onclick="increaseScore([0, 4, 5]); showNextQuestion('question3')">Urban</button>
-                <button onclick="increaseScore([1, 2, 7]); showNextQuestion('question3')">Suburban</button>
-                <button onclick="increaseScore([3, 6, 8, 9]); showNextQuestion('question3')">Rural</button>
-            </div>
+        <div id="question2" class="question" style="display: none;">
+            <p>Which UC school is located in Irvine?</p>
+            <button onclick="showNextQuestion('question2');">UC Berkeley</button>
+            <button onclick="increaseScore([1]); showNextQuestion('question2');">UC Irvine</button>
+            <button onclick="showNextQuestion('question2');">UC Davis</button>
         </div>
-        <div id="results"></div>
+        <div id="question3" class="question" style="display: none;">
+            <p>Which UC school is located in Los Angeles?</p>
+            <button onclick="showNextQuestion('question3');">UC San Francisco</button>
+            <button onclick="increaseScore([2]); showNextQuestion('question3');">UC Los Angeles</button>
+            <button onclick="showNextQuestion('question3');">UC Santa Barbara</button>
+        </div>
+        <div id="question4" class="question" style="display: none;">
+            <p>Which UC school is located in San Diego?</p>
+            <button onclick="showNextQuestion('question4');">UC Santa Cruz</button>
+            <button onclick="showNextQuestion('question4');">UC Irvine</button>
+            <button onclick="increaseScore([3]); showNextQuestion('question4');">UC San Diego</button>
+        </div>
+        <div id="question5" class="question" style="display: none;">
+            <p>Which UC school is located in Davis?</p>
+            <button onclick="showNextQuestion('question5');">UC Berkeley</button>
+            <button onclick="showNextQuestion('question5');">UC Davis</button>
+            <button onclick="increaseScore([4]); showNextQuestion('question5');">UC San Francisco</button>
+        </div>
+        <div id="question6" class="question" style="display: none;">
+            <p>Which UC school is located in Santa Cruz?</p>
+            <button onclick="showNextQuestion('question6');">UC Santa Barbara</button>
+            <button onclick="showNextQuestion('question6');">UC Santa Cruz</button>
+            <button onclick="increaseScore([5]); showNextQuestion('question6');">UC Riverside</button>
+        </div>
+        <div id="question7" class="question" style="display: none;">
+            <p>Which UC school is located in Santa Barbara?</p>
+            <button onclick="increaseScore([6]); showNextQuestion('question7');">UC Santa Barbara</button>
+            <button onclick="showNextQuestion('question7');">UC Berkeley</button>
+            <button onclick="showNextQuestion('question7');">UC Merced</button>
+        </div>
+        <div id="question8" class="question" style="display: none;">
+            <p>Which UC school is located in San Francisco?</p>
+            <button onclick="showNextQuestion('question8');">UC San Diego</button>
+            <button onclick="showNextQuestion('question8');">UC San Francisco</button>
+            <button onclick="increaseScore([7]); showNextQuestion('question8');">UC Riverside</button>
+        </div>
+        <div id="question9" class="question" style="display: none;">
+            <p>Which UC school is located in Riverside?</p>
+            <button onclick="showNextQuestion('question9');">UC Santa Cruz</button>
+            <button onclick="increaseScore([8]); showNextQuestion('question9');">UC Riverside</button>
+            <button onclick="showNextQuestion('question9');">UC Davis</button>
+        </div>
+        <div id="scoreTable" style="display: none;">
+            <h2>Scoreboard</h2>
+            <table>
+                <tr>
+                    <th>Rank</th>
+                    <th>School</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td id="rank1"></td>
+                    <td>UC Berkeley</td>
+                    <td id="score1"></td>
+                </tr>
+                <tr>
+                    <td id="rank2"></td>
+                    <td>UC Irvine</td>
+                    <td id="score2"></td>
+                </tr>
+                <tr>
+                    <td id="rank3"></td>
+                    <td>UC Los Angeles</td>
+                    <td id="score3"></td>
+                </tr>
+            </table>
+        </div>
     </div>
 </body>
 </html>
