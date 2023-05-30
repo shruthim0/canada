@@ -23,6 +23,64 @@ title: College
     </style>
 </head>
 <body>
+    <table>
+        <tr>
+            <th id="rankHeader">Rank</th>
+            <th>UC School</th>
+            <th>Score</th>
+        </tr>
+        <tr id="school1">
+            <td id="rank1"></td>
+            <td>UC Berkeley</td>
+            <td id="score1">0</td>
+        </tr>
+        <tr id="school2">
+            <td id="rank2"></td>
+            <td>UC Davis</td>
+            <td id="score2">0</td>
+        </tr>
+        <tr id="school3">
+            <td id="rank3"></td>
+            <td>UC Irvine</td>
+            <td id="score3">0</td>
+        </tr>
+        <tr id="school4">
+            <td id="rank4"></td>
+            <td>UC Los Angeles</td>
+            <td id="score4">0</td>
+        </tr>
+        <tr id="school5">
+            <td id="rank5"></td>
+            <td>UC Merced</td>
+            <td id="score5">0</td>
+        </tr>
+        <tr id="school6">
+            <td id="rank6"></td>
+            <td>UC Riverside</td>
+            <td id="score6">0</td>
+        </tr>
+        <tr id="school7">
+            <td id="rank7"></td>
+            <td>UC San Diego</td>
+            <td id="score7">0</td>
+        </tr>
+        <tr id="school8">
+            <td id="rank8"></td>
+            <td>UC San Francisco</td>
+            <td id="score8">0</td>
+        </tr>
+        <tr id="school9">
+            <td id="rank9"></td>
+            <td>UC Santa Barbara</td>
+            <td id="score9">0</td>
+        </tr>
+        <tr id="school10">
+            <td id="rank10"></td>
+            <td>UC Santa Cruz</td>
+            <td id="score10">0</td>
+        </tr>
+    </table>
+
     <div data-aos="fade-middle">
         <h2>College Finder</h2>
         <div id="question1">
@@ -53,118 +111,117 @@ title: College
             <p>How good do you want the sports to be?</p>
             <button onclick="increaseScore([0, 3, 8, 6]); showNextQuestion('question6')">Very good (high D1)</button>
             <button onclick="increaseScore([1, 2, 5]); showNextQuestion('question6')">Good (Low D1-D2)</button>
-            <button onclick="increaseScore([7, 9, 4]); showNextQuestion('question6')">Sports don't matter</button>
+            <button onclick="increaseScore([7, 9, 4]); showNextQuestion('question6')">Sports do not matter to me much (D3)</button>
         </div>
         <div id="question6" style="display: none">
-            <p>How good is the campus atmosphere?</p>
-            <button onclick="increaseScore([0, 4, 8]); showNextQuestion('question7')">Amazing</button>
-            <button onclick="increaseScore([3, 5, 9]); showNextQuestion('question7')">Good</button>
-            <button onclick="increaseScore([1, 2, 6, 7]); showNextQuestion('question7')">Average</button>
+            <p>What do you want to study?</p>
+            <select id="major">
+                <option value="accounting">Accounting</option>
+                <option value="architecture">Architecture</option>
+                <option value="biology">Biology</option>
+                <option value="business-administration">Business Administration</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="civil-engineering">Civil Engineering</option>
+                <option value="communication-studies">Communication Studies</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="economics">Economics</option>
+                <option value="education">Education</option>
+                <option value="electrical-engineering">Electrical Engineering</option>
+                <option value="english">English</option>
+                <option value="finance">Finance</option>
+                <option value="graphic-design">Graphic Design</option>
+                <option value="history">History</option>
+                <option value="information-technology">Information Technology</option>
+                <option value="international-relations">International Relations</option>
+                <option value="journalism">Journalism</option>
+                <option value="marketing">Marketing</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="mechanical-engineering">Mechanical Engineering</option>
+                <option value="music">Music</option>
+                <option value="nursing">Nursing</option>
+                <option value="philosophy">Philosophy</option>
+                <option value="physics">Physics</option>
+                <option value="political-science">Political Science</option>
+                <option value="psychology">Psychology</option>
+                <option value="sociology">Sociology</option>
+                <option value="theater">Theater</option>
+                <option value="visual-arts">Visual Arts</option>
+            </select>
+            <br>
+            <button onclick="increaseScore([]); showNextQuestion('question7')">Submit</button>
         </div>
         <div id="question7" style="display: none">
-            <p>Do you care about the school's diversity?</p>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]); showNextQuestion('submitQuiz')">Yes</button>
-            <button onclick="showNextQuestion('submitQuiz')">No</button>
+            <p>Do you want to live in a college town?</p>
+            <button onclick="increaseScore([1]); showNextQuestion('question8')">Yes</button>
+            <button onclick="increaseScore([]); showNextQuestion('question8')">No</button>
+            <button onclick="increaseScore([]); showNextQuestion('question8')">Doesn't matter</button>
         </div>
-        <div id="submitQuiz" style="display: none">
-            <button onclick="showScore()">Submit</button>
+        <div id="question8" style="display: none">
+            <p>Do you want on-campus housing?</p>
+            <button onclick="increaseScore([8, 6, 1]); showNextQuestion('question9')">Yes</button>
+            <button onclick="increaseScore([0, 2, 9, 3]); showNextQuestion('question9')">No</button>
+            <button onclick="increaseScore([5, 7, 4]); showNextQuestion('question9')">I don't have a preference</button>
         </div>
-    </div>
-    <div id="scoreboard" style="display: none">
-        <h2>UC Schools Scoreboard</h2>
-        <table>
-            <tr>
-                <th>UC School</th>
-                <th>Score</th>
-            </tr>
-            <tr>
-                <td>UC Berkeley</td>
-                <td id="ucBerkeleyScore"></td>
-            </tr>
-            <tr>
-                <td>UC Los Angeles</td>
-                <td id="ucLosAngelesScore"></td>
-            </tr>
-            <tr>
-                <td>UC San Diego</td>
-                <td id="ucSanDiegoScore"></td>
-            </tr>
-            <tr>
-                <td>UC Santa Barbara</td>
-                <td id="ucSantaBarbaraScore"></td>
-            </tr>
-            <tr>
-                <td>UC Irvine</td>
-                <td id="ucIrvineScore"></td>
-            </tr>
-            <tr>
-                <td>UC Davis</td>
-                <td id="ucDavisScore"></td>
-            </tr>
-            <tr>
-                <td>UC Santa Cruz</td>
-                <td id="ucSantaCruzScore"></td>
-            </tr>
-            <tr>
-                <td>UC Riverside</td>
-                <td id="ucRiversideScore"></td>
-            </tr>
-            <tr>
-                <td>UC Merced</td>
-                <td id="ucMercedScore"></td>
-            </tr>
-        </table>
-        <button onclick="resetQuiz()">Reset</button>
+        <div id="question9" style="display: none">
+            <p>Do you want to engage in Greek Life?</p>
+            <button onclick="increaseScore([0, 1, 8, 3]); showNextQuestion('question10')">Yes</button>
+            <button onclick="increaseScore([5, 4, 7]); showNextQuestion('question10')">No</button>
+            <button onclick="increaseScore([6, 9, 2]); showNextQuestion('question10')">Maybe</button>
+        </div>
+        <div id="question10" style="display: none">
+            <p>How much money are you willing to pay?</p>
+            <button onclick="increaseScore([3, 0, 6, 8]); showNextQuestion('question11')">Money is not an issue</button>
+            <button onclick="increaseScore([1, 2, 9]); showNextQuestion('question11')">I am willing to pay quite a bit </button>
+            <button onclick="increaseScore([5, 4, 7]); showNextQuestion('question11')">Cheapest possible </button>
+        </div>
+        <div id="question11" style="display: none">
+            <button id="submitBtn" onclick="submitScores()">Submit</button>
+        </div>
     </div>
 
     <script>
-        let scores = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        // Array of UC Schools
+        var ucSchools = [
+            { name: "UC Berkeley", score: 0 },
+            { name: "UC Davis", score: 0 },
+            { name: "UC Irvine", score: 0 },
+            { name: "UC Los Angeles", score: 0 },
+            { name: "UC Merced", score: 0 },
+            { name: "UC Riverside", score: 0 },
+            { name: "UC San Diego", score: 0 },
+            { name: "UC San Francisco", score: 0 },
+            { name: "UC Santa Barbara", score: 0 },
+            { name: "UC Santa Cruz", score: 0 }
+        ];
 
-        function increaseScore(indices) {
-            indices.forEach(index => scores[index]++);
-        }
+        var currentQuestionIndex = 1;
 
         function showNextQuestion(nextQuestionId) {
-            document.getElementById(nextQuestionId).style.display = 'block';
+            document.getElementById("question" + currentQuestionIndex).style.display = "none";
+            document.getElementById(nextQuestionId).style.display = "block";
+            currentQuestionIndex++;
         }
 
-        function showScore() {
-            document.getElementById('question1').style.display = 'none';
-            document.getElementById('question2').style.display = 'none';
-            document.getElementById('question3').style.display = 'none';
-            document.getElementById('question4').style.display = 'none';
-            document.getElementById('question5').style.display = 'none';
-            document.getElementById('question6').style.display = 'none';
-            document.getElementById('question7').style.display = 'none';
-            document.getElementById('submitQuiz').style.display = 'none';
-            document.getElementById('scoreboard').style.display = 'block';
-
-            document.getElementById('ucBerkeleyScore').innerText = scores[0];
-            document.getElementById('ucLosAngelesScore').innerText = scores[1];
-            document.getElementById('ucSanDiegoScore').innerText = scores[2];
-            document.getElementById('ucSantaBarbaraScore').innerText = scores[3];
-            document.getElementById('ucIrvineScore').innerText = scores[4];
-            document.getElementById('ucDavisScore').innerText = scores[5];
-            document.getElementById('ucSantaCruzScore').innerText = scores[6];
-            document.getElementById('ucRiversideScore').innerText = scores[7];
-            document.getElementById('ucMercedScore').innerText = scores[8];
+        // Function to increase the score of the specified UC Schools
+        function increaseScore(indices) {
+            for (let i = 0; i < indices.length; i++) {
+                const index = indices[i];
+                ucSchools[index].score++;
+                document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+            }
         }
 
-        function resetQuiz() {
-            scores = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        // Function to submit the scores and update the table
+        function submitScores() {
+            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
 
-            document.getElementById('ucBerkeleyScore').innerText = '';
-            document.getElementById('ucLosAngelesScore').innerText = '';
-            document.getElementById('ucSanDiegoScore').innerText = '';
-            document.getElementById('ucSantaBarbaraScore').innerText = '';
-            document.getElementById('ucIrvineScore').innerText = '';
-            document.getElementById('ucDavisScore').innerText = '';
-            document.getElementById('ucSantaCruzScore').innerText = '';
-            document.getElementById('ucRiversideScore').innerText = '';
-            document.getElementById('ucMercedScore').innerText = '';
+            for (let i = 0; i < ucSchools.length; i++) {
+                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+                document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
+            }
 
-            document.getElementById('scoreboard').style.display = 'none';
-            document.getElementById('question1').style.display = 'block';
+            document.getElementById("rankHeader").textContent = "Rank"; // Show the first column header as "Rank"
+            document.getElementById("submitBtn").disabled = true; // Disable the submit button after scores are submitted
         }
     </script>
 </body>
