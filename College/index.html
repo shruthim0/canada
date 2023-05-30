@@ -136,19 +136,130 @@ window.onload = wrap_img;
         </tr>
     </table>
 
-    <div>
-        <button onclick="increaseScore([0, 3, 8])">Increase UC Berkeley, UC Los Angeles, UC Santa Barbara</button>
-        <button onclick="increaseScore([1, 4, 9])">Increase UC Davis, UC Merced, UC Santa Cruz</button>
-        <button onclick="increaseScore([2, 5, 6])">Increase UC Irvine, UC Riverside, UC San Diego</button>
-        <button onclick="increaseScore([7])">Increase UC San Francisco</button>
-        <button onclick="increaseScore([6, 4, 8])">Increase UC Berkeley, UC Los Angeles, UC Santa Barbara</button>
-        <button onclick="increaseScore([1, 0, 3])">Increase UC Davis, UC Merced, UC Santa Cruz</button>
-        <button onclick="increaseScore([7, 2, 9])">Increase UC Irvine, UC Riverside, UC San Diego</button>
-        <br>
-        <button onclick="submitScores()">Submit</button>
-    </div>
-
     <script>
+      var questionIndex = 1;
+      
+      
+      function answer(response) {
+        document.getElementById("question" + questionIndex).style.display = "none";
+       questionIndex++;
+      
+      
+       if (questionIndex <= 10) {
+         document.getElementById("question" + questionIndex).style.display = "block";
+       } else {
+         showResult();
+       }
+        if (response === 'small') {
+         // Find UC Berkeley and UC Los Angeles in the uc_scores array
+         var ucBerkeley = uc_scores.find(item => item.school === 'UC Berkeley');
+         var ucLosAngeles = uc_scores.find(item => item.school === 'UC Los Angeles');
+      
+      
+         // Increase the scores of UC Berkeley and UC Los Angeles
+         ucBerkeley.score += 5;
+         ucLosAngeles.score += 3;
+       }
+      }
+      </script>
+      
+      <div data-aos="fade-middle">
+      <h2>College Finder</h2>
+      <div id="question1">
+        <p>How big do you want your school to be?</p>
+        <button onclick="answer('small')">Small (less than 5,000 students)</button>
+        <button onclick="answer('medium')">Medium (5,000-15,000 students)</button>
+        <button onclick="answer('large')">Large (more than 15,000 students)</button>
+      </div>
+      <div id="question2" style="display: none">
+        <p>Which location do you prefer?</p>
+        <button onclick="answer('urban')">Urban</button>
+        <button onclick="answer('suburban')">Suburban</button>
+        <button onclick="answer('rural')">Rural</button>
+      </div>
+      <div id="question3" style="display: none">
+        <p>How prestigious do you want your school to be?</p>
+        <button onclick="answer('notprestigious')">Not very prestigious</button>
+        <button onclick="answer('semiprestigious')">Semi-prestigious</button>
+        <button onclick="answer('veryprestigious')">Very prestigious</button>
+      </div>
+      <div id="question4" style="display: none">
+        <p>What do you prefer?</p>
+        <button onclick="answer('beach')">The beach</button>
+        <button onclick="answer('forest')">The forest</button>
+        <button onclick="answer('mountains')">The mountains</button>
+      </div>
+      <div id="question5" style="display: none">
+        <p>How good do you want the sports to be?</p>
+        <button onclick="answer('verygood')">Very good (high D1)</button>
+        <button onclick="answer('good')">Good (Low D1-D2)</button>
+        <button onclick="answer('notgood')">Sports do not matter to me much (D3)</button>
+      </div>
+      <div id="question6" style="display: none">
+        <p>What do you want to study?</p>
+        <select id="major">
+          <option value="accounting">Accounting</option>
+          <option value="architecture">Architecture</option>
+          <option value="biology">Biology</option>
+          <option value="business-administration">Business Administration</option>
+          <option value="chemistry">Chemistry</option>
+          <option value="civil-engineering">Civil Engineering</option>
+          <option value="communication-studies">Communication Studies</option>
+          <option value="computer-science">Computer Science</option>
+          <option value="economics">Economics</option>
+          <option value="education">Education</option>
+          <option value="electrical-engineering">Electrical Engineering</option>
+          <option value="english">English</option>
+          <option value="finance">Finance</option>
+          <option value="graphic-design">Graphic Design</option>
+          <option value="history">History</option>
+          <option value="information-technology">Information Technology</option>
+          <option value="international-relations">International Relations</option>
+          <option value="journalism">Journalism</option>
+          <option value="marketing">Marketing</option>
+          <option value="mathematics">Mathematics</option>
+          <option value="mechanical-engineering">Mechanical Engineering</option>
+          <option value="music">Music</option>
+          <option value="nursing">Nursing</option>
+          <option value="philosophy">Philosophy</option>
+          <option value="physics">Physics</option>
+          <option value="political-science">Political Science</option>
+          <option value="psychology">Psychology</option>
+          <option value="sociology">Sociology</option>
+          <option value="theater">Theater</option>
+          <option value="visual-arts">Visual Arts</option>
+        </select>
+          <br>
+        <button onclick="answer(false)">Submit</button>
+      </div>
+      <div id="question7" style="display: none">
+        <p>Do you want to live in a college town?</p>
+        <button onclick="answer('collegetown')">Yes</button>
+        <button onclick="answer('nocollegetown')">No</button>
+        <button onclick="answer('maybecollegetown')">Doesn't matter</button>
+      </div>
+      <div id="question8" style="display: none">
+        <p>Do you want on-campus housing?</p>
+        <button onclick="answer('oncampus')">Yes</button>
+        <button onclick="answer('offcampus')">No</button>
+        <button onclick="answer('nopreference')">I don't have a preference</button>
+      </div>
+      <div id="question9" style="display: none">
+        <p>Do you want to engage in Greek Life?</p>
+        <button onclick="answer('greeklife')">Yes</button>
+        <button onclick="answer('nogreeklife')">No</button>
+        <button onclick="answer('maybegreeklife')">Maybe</button>
+      </div>
+      <div id="question10" style="display: none">
+        <p>How much money are you willing to pay?</p>
+        <button onclick="answer('bigmoney')">Money is not an issue</button>
+        <button onclick="answer('midmoney')">I am willing to pay quite a bit (30,000-50,000)</button>
+        <button onclick="answer('lowmoney')">Cheapest possible (Less than $30,000)</button>
+        <button onclick="submitScores()">Submit</button>
+      </div>
+      </div>
+
+      <script>
         // Array of UC Schools
         var ucSchools = [
             { name: "UC Berkeley", score: 0 },
