@@ -79,8 +79,15 @@ title: College
             ucSchools[index].score++;
             document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
           }
+        }
   
-          document.getElementById("question" + questionIndex).style.display = "none";
+        function showResult() {
+          submitScores();
+          // Display the result or perform any other actions
+        
+        }
+        function increaseScore(response) {
+            document.getElementById("question" + questionIndex).style.display = "none";
           questionIndex++;
   
           if (questionIndex <= 10) {
@@ -89,12 +96,6 @@ title: College
             showResult();
           }
         }
-  
-        function showResult() {
-          submitScores();
-          // Display the result or perform any other actions
-        }
-  
         function submitScores() {
           ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
   
