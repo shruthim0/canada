@@ -165,14 +165,14 @@ window.onload = wrap_img;
         }
 
         function showNextQuestion(questionId) {
-            currentQuestionIndex++;
-            if (currentQuestionIndex >= questions.length) {
-                displayResults();
-            } else {
-                hideAllQuestions();
-                document.getElementById(questionId).style.display = 'block';
-            }
-        }
+    if (currentQuestionIndex >= questions.length - 1) {
+        displayResults();
+    } else {
+        currentQuestionIndex++;
+        hideAllQuestions();
+        document.getElementById(questionId).style.display = 'block';
+    }
+}
 
         function hideAllQuestions() {
             var questionElements = document.getElementsByClassName('question');
@@ -182,42 +182,48 @@ window.onload = wrap_img;
         }
 
         function displayResults() {
-            hideAllQuestions();
-            var maxScore = Math.max(...scores);
-            var matchingIndices = [];
-            for (var i = 0; i < scores.length; i++) {
-                if (scores[i] === maxScore) {
-                    matchingIndices.push(i);
-                }
-            }
-
-            var resultsContainer = document.createElement('div');
-            resultsContainer.classList.add('question');
-            resultsContainer.innerHTML = '<p>Based on your preferences, here are the top UC schools:</p>';
-
-            var table = document.createElement('table');
-            var tableHead = document.createElement('thead');
-            var tableBody = document.createElement('tbody');
-            var tableHeaderRow = document.createElement('tr');
-            tableHeaderRow.innerHTML = '<th>Rank</th><th>UC School</th>';
-            tableHead.appendChild(tableHeaderRow);
-
-            for (var j = 0; j < matchingIndices.length; j++) {
-                var rank = j + 1;
-                var schoolIndex = matchingIndices[j];
-                var schoolName = getUCSchoolName(schoolIndex);
-
-                var tableRow = document.createElement('tr');
-                tableRow.innerHTML = '<td>' + rank + '</td><td>' + schoolName + '</td>';
-                tableBody.appendChild(tableRow);
-            }
-
-            table.appendChild(tableHead);
-            table.appendChild(tableBody);
-            resultsContainer.appendChild(table);
-
-            document.getElementById('results').appendChild(resultsContainer);
+    hideAllQuestions();
+    var maxScore = Math.max(...scores);
+    var matchingIndices = [];
+    for (var i = 0; i < scores.length; i++) {
+        if (scores[i] === maxScore) {
+            matchingIndices.push(i);
         }
+    }
+
+    var resultsContainer = document.createElement('div');
+    resultsContainer.classList.add('question');
+    resultsContainer.innerHTML = '<p>Based on your preferences, here are the top UC schools:</p>';
+
+    var table = document.createElement('table');
+    var tableHead = document.createElement('thead');
+    var tableBody = document.createElement('tbody');
+    var tableHeaderRow = document.createElement('tr');
+    tableHeaderRow.innerHTML = '<th>Rank</th><th>UC School</th>';
+    tableHead.appendChild(tableHeaderRow);
+
+    for (var j = 0; j < matchingIndices.length; j++) {
+        var rank = j + 1;
+        var schoolIndex = matchingIndices[j];
+        var schoolName = getUCSchoolName(schoolIndex);
+
+        var tableRow = document.createElement('tr');
+        var rankCell = document.createElement('td');
+        rankCell.textContent = rank;
+        var schoolCell = document.createElement('td');
+        schoolCell.textContent = schoolName;
+
+        tableRow.appendChild(rankCell);
+        tableRow.appendChild(schoolCell);
+        tableBody.appendChild(tableRow);
+    }
+
+    table.appendChild(tableHead);
+    table.appendChild(tableBody);
+    resultsContainer.appendChild(table);
+
+    document.getElementById('results').appendChild(resultsContainer);
+}
 
         function getUCSchoolName(index) {
             var ucSchools = ['UC Berkeley', 'UC Los Angeles', 'UC San Diego', 'UC Santa Barbara', 'UC Irvine', 'UC Davis', 'UC Santa Cruz', 'UC Riverside', 'UC Merced'];
