@@ -230,7 +230,7 @@ window.onload = wrap_img;
             <button onclick="increaseScore([])">Cheapest possible (Less than $30,000)</button>
         </div>
         <div id="question11" style="display: none">
-            <button onclick="submitScores()">Submit</button>
+            <button id="submitBtn" onclick="submitScores()">Submit</button>
         </div>
     </div>
 
@@ -272,7 +272,12 @@ window.onload = wrap_img;
 
             showTable();
             stopQuestions();
+
+            // Hide the submit button
+            var submitButton = document.getElementById("submitBtn");
+            submitButton.style.display = "none";
         }
+
 
         // Function to move to the next question
         function moveToNextQuestion() {
