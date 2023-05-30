@@ -194,7 +194,7 @@ title: College
         }
         function showTable() {
             var table = document.getElementById("scoreTable");
-    table.style.display = "block";
+            table.style.display = "block";
         }
         // Function to submit the scores and update the table
         function submitScores() {
@@ -203,7 +203,6 @@ title: College
             for (let i = 0; i < ucSchools.length; i++) {
                 document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
             }
-
             showTable();
             stopQuestions();
 
