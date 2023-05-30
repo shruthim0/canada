@@ -186,8 +186,8 @@ window.onload = wrap_img;
             <button id="submitBtn" onclick="submitScores()">Submit</button>
         </div>
     </div>
-
-    <table id="scoreTable" style="display: none">
+    
+    <table id="scoreTable" style="display: none;">
         <tr>
             <th id="rankHeader">Rank</th>
             <th>UC School</th>
@@ -278,21 +278,19 @@ window.onload = wrap_img;
 
         // Function to submit the scores and update the table
         function submitScores() {
-    ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
 
-    // Update table rows and columns
-    for (let i = 0; i < ucSchools.length; i++) {
-        document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
-        document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
-        document.getElementById("rank" + (i + 1)).textContent = i + 1; // Update ranks
-    }
+            for (let i = 0; i < ucSchools.length; i++) {
+                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+                document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
+            }
 
-    // Show the table
-    document.getElementById("scoreTable").style.display = "table";
+            document.getElementById("rankHeader").textContent = "Rank"; // Show the first column header as "Rank"
+            document.getElementById("submitBtn").disabled = true; // Disable the submit button after scores are submitted
 
-    // Disable the submit button after scores are submitted
-    document.getElementById("submitBtn").disabled = true;
-}
+            document.getElementById("scoreTable").style.display = "table"; // Display the table with updated rankings
+        }
+    </script>
     </script>
 </body>
 </html>
