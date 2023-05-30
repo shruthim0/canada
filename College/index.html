@@ -153,149 +153,89 @@ window.onload = wrap_img;
         <div id="question3" style="display: none">
             <p>How prestigious do you want your school to be?</p>
             <button onclick="increaseScore([0, 1, 2, 3, 4, 6, 8])">Not very prestigious</button>
-            <button onclick="increaseScore([5, 7, 9])">Semi-prestigious</button>
-            <button onclick="increaseScore([5, 7, 9])">Very prestigious</button>
+            <button onclick="increaseScore([5, 7, 9])">Moderately prestigious</button>
+            <button onclick="increaseScore([])">Highly prestigious</button>
         </div>
         <div id="question4" style="display: none">
-            <p>What do you prefer?</p>
-            <button onclick="increaseScore([0, 3, 8])">The beach</button>
-            <button onclick="increaseScore([2, 4, 9])">The forest</button>
-            <button onclick="increaseScore([1, 5, 6, 7])">The mountains</button>
+            <p>Do you prefer a specialized or comprehensive school?</p>
+            <button onclick="increaseScore([5, 6, 7])">Specialized</button>
+            <button onclick="increaseScore([0, 1, 2, 3, 4, 8, 9])">Comprehensive</button>
         </div>
         <div id="question5" style="display: none">
-            <p>How good do you want the sports to be?</p>
-            <button onclick="increaseScore([1, 5, 6, 7])">Very good (high D1)</button>
-            <button onclick="increaseScore([0, 2, 3, 4, 8, 9])">Good (Low D1-D2)</button>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Sports do not matter to me much (D3)</button>
+            <p>Which programs are you interested in?</p>
+            <button onclick="increaseScore([0, 1, 2, 3, 4, 9])">STEM (Science, Technology, Engineering, Math)</button>
+            <button onclick="increaseScore([5, 6, 7, 8])">Social Sciences and Humanities</button>
         </div>
         <div id="question6" style="display: none">
-            <p>What do you want to study?</p>
-            <select id="major">
-                <option value="accounting">Accounting</option>
-                <option value="architecture">Architecture</option>
-                <option value="biology">Biology</option>
-                <option value="business-administration">Business Administration</option>
-                <option value="chemistry">Chemistry</option>
-                <option value="civil-engineering">Civil Engineering</option>
-                <option value="communication-studies">Communication Studies</option>
-                <option value="computer-science">Computer Science</option>
-                <option value="economics">Economics</option>
-                <option value="education">Education</option>
-                <option value="electrical-engineering">Electrical Engineering</option>
-                <option value="english">English</option>
-                <option value="finance">Finance</option>
-                <option value="graphic-design">Graphic Design</option>
-                <option value="history">History</option>
-                <option value="information-technology">Information Technology</option>
-                <option value="international-relations">International Relations</option>
-                <option value="journalism">Journalism</option>
-                <option value="marketing">Marketing</option>
-                <option value="mathematics">Mathematics</option>
-                <option value="mechanical-engineering">Mechanical Engineering</option>
-                <option value="music">Music</option>
-                <option value="nursing">Nursing</option>
-                <option value="philosophy">Philosophy</option>
-                <option value="physics">Physics</option>
-                <option value="political-science">Political Science</option>
-                <option value="psychology">Psychology</option>
-                <option value="sociology">Sociology</option>
-                <option value="theater">Theater</option>
-                <option value="visual-arts">Visual Arts</option>
-            </select>
-            <br>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Submit</button>
+            <p>Do you prefer a research or teaching-focused school?</p>
+            <button onclick="increaseScore([0, 1, 2, 3, 4])">Research-focused</button>
+            <button onclick="increaseScore([5, 6, 7, 8, 9])">Teaching-focused</button>
         </div>
         <div id="question7" style="display: none">
-            <p>Do you want to live in a college town?</p>
-            <button onclick="increaseScore([0, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
-            <button onclick="increaseScore([])">No</button>
-            <button onclick="increaseScore([])">Doesn't matter</button>
+            <p>What is your preferred climate?</p>
+            <button onclick="increaseScore([0, 1, 3, 4, 6, 7])">Warm</button>
+            <button onclick="increaseScore([2, 5, 8, 9])">Moderate</button>
+            <button onclick="increaseScore([2, 5, 8, 9])">Cold</button>
         </div>
         <div id="question8" style="display: none">
-            <p>Do you want on-campus housing?</p>
-            <button onclick="increaseScore([0, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
-            <button onclick="increaseScore([])">No</button>
-            <button onclick="increaseScore([])">I don't have a preference</button>
-        </div>
-        <div id="question9" style="display: none">
-            <p>Do you want to engage in Greek Life?</p>
+            <p>Are you interested in a specific extracurricular activity?</p>
             <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
             <button onclick="increaseScore([])">No</button>
-            <button onclick="increaseScore([])">Maybe</button>
+        </div>
+        <div id="question9" style="display: none">
+            <p>What is your budget for college expenses?</p>
+            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">$0 - $20,000</button>
+            <button onclick="increaseScore([])">$20,001 - $40,000</button>
+            <button onclick="increaseScore([])">$40,001 - $60,000</button>
+            <button onclick="increaseScore([])">$60,001+</button>
         </div>
         <div id="question10" style="display: none">
-            <p>How much money are you willing to pay?</p>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Money is not an issue</button>
-            <button onclick="increaseScore([])">I am willing to pay quite a bit (30,000-50,000)</button>
-            <button onclick="increaseScore([])">Cheapest possible (Less than $30,000)</button>
-            <button onclick="submitScores()">Submit</button>
+            <p>Do you have any preferences for the college's proximity to a major city?</p>
+            <button onclick="increaseScore([0, 3, 4, 8])">Must be near a major city</button>
+            <button onclick="increaseScore([1, 2, 5, 6, 7, 9])">Prefer to be near a major city</button>
+            <button onclick="increaseScore([])">No preference</button>
         </div>
     </div>
 
     <script>
-        // Array of UC Schools
-        var ucSchools = [
-            { name: "UC Berkeley", score: 0 },
-            { name: "UC Davis", score: 0 },
-            { name: "UC Irvine", score: 0 },
-            { name: "UC Los Angeles", score: 0 },
-            { name: "UC Merced", score: 0 },
-            { name: "UC Riverside", score: 0 },
-            { name: "UC San Diego", score: 0 },
-            { name: "UC San Francisco", score: 0 },
-            { name: "UC Santa Barbara", score: 0 },
-            { name: "UC Santa Cruz", score: 0 }
-        ];
+        // Function to increase the score for selected schools
+        function increaseScore(schools) {
+            schools.forEach(function(schoolIndex) {
+                var scoreElement = document.getElementById("score" + (schoolIndex + 1));
+                var currentScore = parseInt(scoreElement.innerHTML);
+                scoreElement.innerHTML = currentScore + 1;
+            });
 
-        // Function to increase the score of the specified UC Schools
-        function increaseScore(indices) {
-            for (let i = 0; i < indices.length; i++) {
-                const index = indices[i];
-                ucSchools[index].score++;
-                document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+            // Hide current question and show the next question
+            var currentQuestion = document.querySelector("#question" + schools[0]);
+            currentQuestion.style.display = "none";
+
+            var nextQuestion = document.querySelector("#question" + (schools[0] + 1));
+            nextQuestion.style.display = "block";
+
+            // If it's the last question, show the final results
+            if (schools[0] === 9) {
+                var finalScores = document.querySelectorAll("td[id^='score']");
+                var maxScore = 0;
+                var selectedSchools = [];
+
+                finalScores.forEach(function(scoreElement) {
+                    var score = parseInt(scoreElement.innerHTML);
+                    if (score > maxScore) {
+                        maxScore = score;
+                        selectedSchools = [scoreElement.parentNode.firstChild.innerHTML];
+                    } else if (score === maxScore) {
+                        selectedSchools.push(scoreElement.parentNode.firstChild.innerHTML);
+                    }
+                });
+
+                var resultContainer = document.querySelector("#question10");
+                resultContainer.innerHTML = "<h2>Results</h2><p>Your recommended UC schools are: " + selectedSchools.join(", ") + ".</p>";
             }
-            moveToNextQuestion();
         }
-
-        // Function to submit the scores and update the table
-        function submitScores() {
-            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
-
-            for (let i = 0; i < ucSchools.length; i++) {
-                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
-            }
-
-            resetQuestions();
-        }
-
-        // Function to move to the next question
-        function moveToNextQuestion() {
-    const currentQuestion = getCurrentQuestion();
-    const nextQuestion = document.getElementById("question" + (currentQuestion + 1));
-    const currentQuestionDiv = document.getElementById("question" + currentQuestion);
-
-    if (nextQuestion) {
-        currentQuestionDiv.style.display = "none";
-        nextQuestion.style.display = "block";
-    } else {
-        const submitButton = document.getElementById("submit");
-        submitButton.style.display = "block";
-    }
-}
-
-// Function to get the index of the current question
-function getCurrentQuestion() {
-    for (let i = 1; i <= 10; i++) {
-        if (document.getElementById("question" + i).style.display !== "none") {
-            return i;
-        }
-    }
-    return -1;
-}
     </script>
 </body>
 </html>
-
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
