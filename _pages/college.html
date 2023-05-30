@@ -74,33 +74,33 @@ title: College
         <h2>College Finder</h2>
         <div id="question1">
             <p>How big do you want your school to be?</p>
-            <button onclick="increaseScore([0, 3, 8])">Small (less than 5,000 students)</button>
-            <button onclick="increaseScore([1, 4, 9])">Medium (5,000-15,000 students)</button>
-            <button onclick="increaseScore([2, 5, 6, 7])">Large (more than 15,000 students)</button>
+            <button onclick="increaseScore([4, 7, 9])">Small (less than 20,000 students)</button>
+            <button onclick="increaseScore([3, 5, 8])">Medium (20,000-30,000 students)</button>
+            <button onclick="increaseScore([0, 2, 3, 6])">Large (more than 30,000 students)</button>
         </div>
         <div id="question2" style="display: none">
             <p>Which location do you prefer?</p>
-            <button onclick="increaseScore([0, 1, 2, 5])">Urban</button>
-            <button onclick="increaseScore([3, 4, 6, 7, 8, 9])">Suburban</button>
-            <button onclick="increaseScore([3, 4, 6, 7, 8, 9])">Rural</button>
+            <button onclick="increaseScore([0, 3, 6, 7])">Urban</button>
+            <button onclick="increaseScore([1, 2, 5, 8, 9])">Suburban</button>
+            <button onclick="increaseScore([4])">Rural</button>
         </div>
         <div id="question3" style="display: none">
             <p>How prestigious do you want your school to be?</p>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 6, 8])">Not very prestigious</button>
-            <button onclick="increaseScore([5, 7, 9])">Semi-prestigious</button>
-            <button onclick="increaseScore([5, 7, 9])">Very prestigious</button>
+            <button onclick="increaseScore([4, 5, 7])">Not very prestigious</button>
+            <button onclick="increaseScore([1, 6, 9 ])">Semi-prestigious</button>
+            <button onclick="increaseScore([0, 2, 3, 8])">Very prestigious</button>
         </div>
         <div id="question4" style="display: none">
             <p>What do you prefer?</p>
-            <button onclick="increaseScore([0, 3, 8])">The beach</button>
-            <button onclick="increaseScore([2, 4, 9])">The forest</button>
-            <button onclick="increaseScore([1, 5, 6, 7])">The mountains</button>
+            <button onclick="increaseScore([6, 8, 3])">The beach</button>
+            <button onclick="increaseScore([9, 5, ])">The forest</button>
+            <button onclick="increaseScore([0, 1, 4, 2, 7])">The mountains</button>
         </div>
         <div id="question5" style="display: none">
             <p>How good do you want the sports to be?</p>
-            <button onclick="increaseScore([1, 5, 6, 7])">Very good (high D1)</button>
-            <button onclick="increaseScore([0, 2, 3, 4, 8, 9])">Good (Low D1-D2)</button>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Sports do not matter to me much (D3)</button>
+            <button onclick="increaseScore([0, 3, 8, 6])">Very good (high D1)</button>
+            <button onclick="increaseScore([1, 2, 5, ])">Good (Low D1-D2)</button>
+            <button onclick="increaseScore([7, 9, 4])">Sports do not matter to me much (D3)</button>
         </div>
         <div id="question6" style="display: none">
             <p>What do you want to study?</p>
@@ -137,31 +137,31 @@ title: College
                 <option value="visual-arts">Visual Arts</option>
             </select>
             <br>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Submit</button>
+            <button onclick="increaseScore([])">Submit</button>
         </div>
         <div id="question7" style="display: none">
             <p>Do you want to live in a college town?</p>
-            <button onclick="increaseScore([0, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
+            <button onclick="increaseScore([1])">Yes</button>
             <button onclick="increaseScore([])">No</button>
             <button onclick="increaseScore([])">Doesn't matter</button>
         </div>
         <div id="question8" style="display: none">
             <p>Do you want on-campus housing?</p>
-            <button onclick="increaseScore([0, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
-            <button onclick="increaseScore([])">No</button>
-            <button onclick="increaseScore([])">I don't have a preference</button>
+            <button onclick="increaseScore([8, 6, 1])">Yes</button>
+            <button onclick="increaseScore([0, 2, 9, 3])">No</button>
+            <button onclick="increaseScore([5, 7, 4])">I don't have a preference</button>
         </div>
         <div id="question9" style="display: none">
             <p>Do you want to engage in Greek Life?</p>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
-            <button onclick="increaseScore([])">No</button>
-            <button onclick="increaseScore([])">Maybe</button>
+            <button onclick="increaseScore([0, 1, 8, 3])">Yes</button>
+            <button onclick="increaseScore([5, 4, 7])">No</button>
+            <button onclick="increaseScore([6, 9, 2])">Maybe</button>
         </div>
         <div id="question10" style="display: none">
             <p>How much money are you willing to pay?</p>
-            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Money is not an issue</button>
-            <button onclick="increaseScore([])">I am willing to pay quite a bit (30,000-50,000)</button>
-            <button onclick="increaseScore([])">Cheapest possible (Less than $30,000)</button>
+            <button onclick="increaseScore([3, 0, 6, 8])">Money is not an issue</button>
+            <button onclick="increaseScore([1, 2, 9])">I am willing to pay quite a bit </button>
+            <button onclick="increaseScore([5, 4, 7])">Cheapest possible </button>
         </div>
         <div id="question11" style="display: none">
             <button id="submitBtn" onclick="submitScores()">Submit</button>
