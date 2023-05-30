@@ -159,7 +159,7 @@ window.onload = wrap_img;
         <div id="question4" style="display: none">
             <p>What do you prefer?</p>
             <button onclick="increaseScore([6, 8, 3])">The beach</button>
-            <button onclick="increaseScore([9, 5, ])">The forest</button>
+            <button onclick="increaseScore([9, 5])">The forest</button>
             <button onclick="increaseScore([0, 1, 4, 2, 7])">The mountains</button>
         </div>
         <div id="question5" style="display: none">
@@ -251,13 +251,14 @@ window.onload = wrap_img;
 
         // Function to increase the score of the specified UC Schools
         function increaseScore(indices) {
-            for (let i = 0; i < indices.length; i++) {
-                const index = indices[i];
-                ucSchools[index].score++;
-                document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
-            }
-            moveToNextQuestion();
-        }
+    for (let i = 0; i < indices.length; i++) {
+        const index = indices[i];
+        ucSchools[index].score++;
+        document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+    }
+    moveToNextQuestion();
+    ucSchools.sort((a, b) => b.score - a.score); // Update the order of schools based on scores
+}
         function showTable() {
             var table = document.getElementById("scoreTable");
             table.style.display = "block";
