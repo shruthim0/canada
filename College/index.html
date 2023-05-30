@@ -89,7 +89,7 @@ window.onload = wrap_img;
     </style>
 </head>
 <body>
-    <table>
+    <table id="scoreTable" style="display: none;">
         <tr>
             <th>UC School</th>
             <th>Score</th>
@@ -259,11 +259,8 @@ window.onload = wrap_img;
             moveToNextQuestion();
         }
         function showTable() {
-            var scoreboard = document.getElementById("scoreboard");
-            var questionsDiv = document.querySelector("div[data-aos='fade-middle']");
-
-            scoreboard.style.display = "table";
-            questionsDiv.style.display = "none";
+            var table = document.getElementById("scoreTable");
+    table.style.display = "block";
         }
         // Function to submit the scores and update the table
         function submitScores() {
@@ -274,6 +271,7 @@ window.onload = wrap_img;
             }
 
             showTable();
+            stopQuestions();
         }
 
         // Function to move to the next question
