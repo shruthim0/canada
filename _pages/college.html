@@ -11,11 +11,11 @@ title: College
         body {
             font-family: Arial, sans-serif;
         }
-
+    
         h2 {
             text-align: center;
         }
-
+    
         .container {
             max-width: 600px;
             margin: 0 auto;
@@ -24,11 +24,11 @@ title: College
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
+    
         p {
             margin-top: 0;
         }
-
+    
         button {
             display: block;
             width: 100%;
@@ -41,37 +41,69 @@ title: College
             cursor: pointer;
             transition: background-color 0.3s;
         }
-
+    
         button:hover {
             background-color: #45a049;
         }
-
+    
         select {
             width: 100%;
             padding: 10px;
             font-size: 16px;
             border-radius: 5px;
         }
-
+    
         table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 20px;
         }
-
+    
         th, td {
             padding: 10px;
             text-align: center;
             border: 1px solid black;
         }
-
+    
         th {
             background-color: #4CAF50;
             color: white;
         }
-
+    
         td:first-child {
             font-weight: bold;
+        }
+    
+        /* Updated styles for the table */
+        #scoreTable {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        #scoreTable th, #scoreTable td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+    
+        #scoreTable th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    
+        #scoreTable td:first-child {
+            font-weight: bold;
+        }
+    
+        #scoreTable tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        #scoreTable tr:hover {
+            background-color: #e0e0e0;
         }
     </style>
 </head>
