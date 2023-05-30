@@ -137,39 +137,38 @@ window.onload = wrap_img;
     </table>
 
     <script>
-      var questionIndex = 1;
-
-      function increaseScore(indices) {
-        for (let i = 0; i < indices.length; i++) {
-          const index = indices[i];
-          ucSchools[index].score++;
-          document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+        var questionIndex = 1;
+  
+        function increaseScore(indices) {
+          for (let i = 0; i < indices.length; i++) {
+            const index = indices[i];
+            ucSchools[index].score++;
+            document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+          }
+  
+          document.getElementById("question" + questionIndex).style.display = "none";
+          questionIndex++;
+  
+          if (questionIndex <= 10) {
+            document.getElementById("question" + questionIndex).style.display = "block";
+          } else {
+            showResult();
+          }
         }
-
-        document.getElementById("question" + questionIndex).style.display = "none";
- questionIndex++;
-
-
- if (questionIndex <= 10) {
-   document.getElementById("question" + questionIndex).style.display = "block";
- } else {
-   showResult();
+  
+        function showResult() {
+          submitScores();
+          // Display the result or perform any other actions
         }
-      }
-
-      function showResult() {
-        submitScores();
-        // Display the result or perform any other actions
-      }
-
-      function submitScores() {
-        ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
-
-        for (let i = 0; i < ucSchools.length; i++) {
-          document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+  
+        function submitScores() {
+          ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+  
+          for (let i = 0; i < ucSchools.length; i++) {
+            document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+          }
         }
-      }
-    </script>
+      </script>
       
       <div data-aos="fade-middle">
       <h2>College Finder</h2>
