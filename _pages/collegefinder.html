@@ -25,46 +25,57 @@ title: College Finder
 <body>
     <table>
         <tr>
+            <th>Rank</th>
             <th>UC School</th>
             <th>Score</th>
         </tr>
-        <tr>
+        <tr id="school1">
+            <td id="rank1"></td>
             <td>UC Berkeley</td>
             <td id="score1">0</td>
         </tr>
-        <tr>
+        <tr id="school2">
+            <td id="rank2"></td>
             <td>UC Davis</td>
             <td id="score2">0</td>
         </tr>
-        <tr>
+        <tr id="school3">
+            <td id="rank3"></td>
             <td>UC Irvine</td>
             <td id="score3">0</td>
         </tr>
-        <tr>
+        <tr id="school4">
+            <td id="rank4"></td>
             <td>UC Los Angeles</td>
             <td id="score4">0</td>
         </tr>
-        <tr>
+        <tr id="school5">
+            <td id="rank5"></td>
             <td>UC Merced</td>
             <td id="score5">0</td>
         </tr>
-        <tr>
+        <tr id="school6">
+            <td id="rank6"></td>
             <td>UC Riverside</td>
             <td id="score6">0</td>
         </tr>
-        <tr>
+        <tr id="school7">
+            <td id="rank7"></td>
             <td>UC San Diego</td>
             <td id="score7">0</td>
         </tr>
-        <tr>
+        <tr id="school8">
+            <td id="rank8"></td>
             <td>UC San Francisco</td>
             <td id="score8">0</td>
         </tr>
-        <tr>
+        <tr id="school9">
+            <td id="rank9"></td>
             <td>UC Santa Barbara</td>
             <td id="score9">0</td>
         </tr>
-        <tr>
+        <tr id="school10">
+            <td id="rank10"></td>
             <td>UC Santa Cruz</td>
             <td id="score10">0</td>
         </tr>
@@ -105,12 +116,13 @@ title: College Finder
 
         // Function to submit the scores and update the table
         function submitScores() {
-            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+    ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
 
-            for (let i = 0; i < ucSchools.length; i++) {
-                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
-            }
-        }
+    for (let i = 0; i < ucSchools.length; i++) {
+        document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+        document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
+    }
+}
     </script>
 </body>
 </html>
