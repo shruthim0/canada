@@ -137,16 +137,10 @@ window.onload = wrap_img;
     </table>
 
     <div>
-        <button onclick="increaseScore(0)">Increase UC Berkeley</button>
-        <button onclick="increaseScore(1)">Increase UC Davis</button>
-        <button onclick="increaseScore(2)">Increase UC Irvine</button>
-        <button onclick="increaseScore(3)">Increase UC Los Angeles</button>
-        <button onclick="increaseScore(4)">Increase UC Merced</button>
-        <button onclick="increaseScore(5)">Increase UC Riverside</button>
-        <button onclick="increaseScore(6)">Increase UC San Diego</button>
-        <button onclick="increaseScore(7)">Increase UC San Francisco</button>
-        <button onclick="increaseScore(8)">Increase UC Santa Barbara</button>
-        <button onclick="increaseScore(9)">Increase UC Santa Cruz</button>
+        <button onclick="increaseScore([0, 3, 8])">Increase UC Berkeley, UC Los Angeles, UC Santa Barbara</button>
+        <button onclick="increaseScore([1, 4, 9])">Increase UC Davis, UC Merced, UC Santa Cruz</button>
+        <button onclick="increaseScore([2, 5, 6])">Increase UC Irvine, UC Riverside, UC San Diego</button>
+        <button onclick="increaseScore([7])">Increase UC San Francisco</button>
         <br>
         <button onclick="submitScores()">Submit</button>
     </div>
@@ -166,10 +160,13 @@ window.onload = wrap_img;
             { name: "UC Santa Cruz", score: 0 }
         ];
 
-        // Function to increase the score of the specified UC School
-        function increaseScore(index) {
-            ucSchools[index].score++;
-            document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+        // Function to increase the score of the specified UC Schools
+        function increaseScore(indices) {
+            for (let i = 0; i < indices.length; i++) {
+                const index = indices[i];
+                ucSchools[index].score++;
+                document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+            }
         }
 
         // Function to submit the scores and update the table
