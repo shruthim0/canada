@@ -153,99 +153,163 @@ window.onload = wrap_img;
         <div id="question3" style="display: none">
             <p>How prestigious do you want your school to be?</p>
             <button onclick="increaseScore([0, 1, 2, 3, 4, 6, 8])">Not very prestigious</button>
-            <button onclick="increaseScore([5, 7, 9])">Moderately prestigious</button>
-            <button onclick="increaseScore([5, 7, 9])">Highly prestigious</button>
+            <button onclick="increaseScore([5, 7, 9])">Semi-prestigious</button>
+            <button onclick="increaseScore([5, 7, 9])">Very prestigious</button>
         </div>
         <div id="question4" style="display: none">
-            <p>Which climate do you prefer?</p>
-            <button onclick="increaseScore([1, 2, 3, 6, 7, 9])">Warm</button>
-            <button onclick="increaseScore([4, 5, 8])">Moderate</button>
-            <button onclick="increaseScore([0])">Cold</button>
+            <p>What do you prefer?</p>
+            <button onclick="increaseScore([0, 3, 8])">The beach</button>
+            <button onclick="increaseScore([2, 4, 9])">The forest</button>
+            <button onclick="increaseScore([1, 5, 6, 7])">The mountains</button>
         </div>
         <div id="question5" style="display: none">
-            <p>How important is diversity to you?</p>
-            <button onclick="increaseScore([2, 4, 5, 6, 8, 9])">Not important</button>
-            <button onclick="increaseScore([0, 1, 3, 7])">Somewhat important</button>
-            <button onclick="increaseScore([0, 1, 3, 7])">Very important</button>
+            <p>How good do you want the sports to be?</p>
+            <button onclick="increaseScore([1, 5, 6, 7])">Very good (high D1)</button>
+            <button onclick="increaseScore([0, 2, 3, 4, 8, 9])">Good (Low D1-D2)</button>
+            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Sports do not matter to me much (D3)</button>
         </div>
         <div id="question6" style="display: none">
-            <p>Which majors are you interested in?</p>
-            <button onclick="increaseScore([0, 2, 3, 4, 6, 8])">STEM</button>
-            <button onclick="increaseScore([1, 5, 7])">Social Sciences</button>
-            <button onclick="increaseScore([9])">Arts & Humanities</button>
+            <p>What do you want to study?</p>
+            <select id="major">
+                <option value="accounting">Accounting</option>
+                <option value="architecture">Architecture</option>
+                <option value="biology">Biology</option>
+                <option value="business-administration">Business Administration</option>
+                <option value="chemistry">Chemistry</option>
+                <option value="civil-engineering">Civil Engineering</option>
+                <option value="communication-studies">Communication Studies</option>
+                <option value="computer-science">Computer Science</option>
+                <option value="economics">Economics</option>
+                <option value="education">Education</option>
+                <option value="electrical-engineering">Electrical Engineering</option>
+                <option value="english">English</option>
+                <option value="finance">Finance</option>
+                <option value="graphic-design">Graphic Design</option>
+                <option value="history">History</option>
+                <option value="information-technology">Information Technology</option>
+                <option value="international-relations">International Relations</option>
+                <option value="journalism">Journalism</option>
+                <option value="marketing">Marketing</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="mechanical-engineering">Mechanical Engineering</option>
+                <option value="music">Music</option>
+                <option value="nursing">Nursing</option>
+                <option value="philosophy">Philosophy</option>
+                <option value="physics">Physics</option>
+                <option value="political-science">Political Science</option>
+                <option value="psychology">Psychology</option>
+                <option value="sociology">Sociology</option>
+                <option value="theater">Theater</option>
+                <option value="visual-arts">Visual Arts</option>
+            </select>
+            <br>
+            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Submit</button>
         </div>
         <div id="question7" style="display: none">
-            <p>How important is research opportunities?</p>
-            <button onclick="increaseScore([0, 1, 2, 3, 6, 7, 8])">Not important</button>
-            <button onclick="increaseScore([4, 5])">Somewhat important</button>
-            <button onclick="increaseScore([4, 5])">Very important</button>
+            <p>Do you want to live in a college town?</p>
+            <button onclick="increaseScore([0, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
+            <button onclick="increaseScore([])">No</button>
+            <button onclick="increaseScore([])">Doesn't matter</button>
         </div>
         <div id="question8" style="display: none">
-            <p>Which sports programs are you interested in?</p>
-            <button onclick="increaseScore([0, 2, 3, 6, 8])">Football, Basketball</button>
-            <button onclick="increaseScore([1, 4, 7, 9])">Soccer, Baseball, Softball</button>
-            <button onclick="increaseScore([5])">Swimming, Track & Field</button>
+            <p>Do you want on-campus housing?</p>
+            <button onclick="increaseScore([0, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
+            <button onclick="increaseScore([])">No</button>
+            <button onclick="increaseScore([])">I don't have a preference</button>
         </div>
         <div id="question9" style="display: none">
-            <p>How important is the cost of attendance?</p>
-            <button onclick="increaseScore([0, 2, 4, 6, 8])">Not important</button>
-            <button onclick="increaseScore([1, 3, 5, 7])">Somewhat important</button>
-            <button onclick="increaseScore([9])">Very important</button>
+            <p>Do you want to engage in Greek Life?</p>
+            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Yes</button>
+            <button onclick="increaseScore([])">No</button>
+            <button onclick="increaseScore([])">Maybe</button>
         </div>
         <div id="question10" style="display: none">
-            <p>Which campus culture appeals to you?</p>
-            <button onclick="increaseScore([0, 1, 2, 5, 6, 8, 9])">Academically focused</button>
-            <button onclick="increaseScore([3, 4, 7])">Socially active</button>
+            <p>How much money are you willing to pay?</p>
+            <button onclick="increaseScore([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])">Money is not an issue</button>
+            <button onclick="increaseScore([])">I am willing to pay quite a bit (30,000-50,000)</button>
+            <button onclick="increaseScore([])">Cheapest possible (Less than $30,000)</button>
+            <button onclick="submitScores()">Submit</button>
         </div>
     </div>
 
     <script>
-        // UC Schools data
-        const ucSchools = [
-            { name: "UC Berkeley", scoreId: "score1" },
-            { name: "UC Davis", scoreId: "score2" },
-            { name: "UC Irvine", scoreId: "score3" },
-            { name: "UC Los Angeles", scoreId: "score4" },
-            { name: "UC Merced", scoreId: "score5" },
-            { name: "UC Riverside", scoreId: "score6" },
-            { name: "UC San Diego", scoreId: "score7" },
-            { name: "UC San Francisco", scoreId: "score8" },
-            { name: "UC Santa Barbara", scoreId: "score9" },
-            { name: "UC Santa Cruz", scoreId: "score10" }
+        // Array of UC Schools
+        var ucSchools = [
+            { name: "UC Berkeley", score: 0 },
+            { name: "UC Davis", score: 0 },
+            { name: "UC Irvine", score: 0 },
+            { name: "UC Los Angeles", score: 0 },
+            { name: "UC Merced", score: 0 },
+            { name: "UC Riverside", score: 0 },
+            { name: "UC San Diego", score: 0 },
+            { name: "UC San Francisco", score: 0 },
+            { name: "UC Santa Barbara", score: 0 },
+            { name: "UC Santa Cruz", score: 0 }
         ];
 
-        // Function to increase the score of selected UC schools
-        function increaseScore(selectedSchools) {
-            selectedSchools.forEach(index => {
-                const scoreElement = document.getElementById(ucSchools[index].scoreId);
-                const currentScore = parseInt(scoreElement.innerText);
-                scoreElement.innerText = currentScore + 1;
-            });
+        // Function to increase the score of the specified UC Schools
+        function increaseScore(indices) {
+            for (let i = 0; i < indices.length; i++) {
+                const index = indices[i];
+                ucSchools[index].score++;
+                document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+            }
+            moveToNextQuestion();
+        }
 
-            const currentQuestion = document.getElementById(`question${selectedSchools[0] + 1}`);
-            currentQuestion.style.display = "none";
+        // Function to submit the scores and update the table
+        function submitScores() {
+            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
 
-            if (selectedSchools[0] < 9) {
-                const nextQuestion = document.getElementById(`question${selectedSchools[0] + 2}`);
+            for (let i = 0; i < ucSchools.length; i++) {
+                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+            }
+
+            resetQuestions();
+        }
+
+        // Function to move to the next question
+        function moveToNextQuestion() {
+            const currentQuestion = getCurrentQuestion();
+            const nextQuestion = document.getElementById("question" + (currentQuestion + 1));
+            const currentQuestionDiv = document.getElementById("question" + currentQuestion);
+
+            if (nextQuestion) {
+                currentQuestionDiv.style.display = "none";
                 nextQuestion.style.display = "block";
             } else {
-                const result = document.getElementById("result");
-                const maxScore = Math.max(...ucSchools.map(school => parseInt(document.getElementById(school.scoreId).innerText)));
-                const matchedSchools = ucSchools.filter(school => parseInt(document.getElementById(school.scoreId).innerText) === maxScore);
-                let resultText = "You might be interested in the following UC schools: ";
-                matchedSchools.forEach(school => {
-                    resultText += school.name + ", ";
-                });
-                result.innerText = resultText.slice(0, -2);
-                result.style.display = "block";
+                submitScores();
             }
         }
+
+        // Function to get the index of the current question
+        function getCurrentQuestion() {
+            for (let i = 1; i <= 10; i++) {
+                if (document.getElementById("question" + i).style.display !== "none") {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        // Function to reset the questions and scores
+        function resetQuestions() {
+            for (let i = 0; i < ucSchools.length; i++) {
+                ucSchools[i].score = 0;
+                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                const question = document.getElementById("question" + i);
+                question.style.display = "none";
+            }
+
+            document.getElementById("question1").style.display = "block";
+        }
     </script>
-
-    <div id="result" style="display: none"></div>
-
 </body>
 </html>
+
       </div>
     </main><footer class="site-footer h-card">
   <data class="u-url" href="/canada/"></data>
