@@ -147,12 +147,13 @@ window.onload = wrap_img;
         }
 
         document.getElementById("question" + questionIndex).style.display = "none";
-        questionIndex++;
+ questionIndex++;
 
-        if (questionIndex <= 10) {
-          document.getElementById("question" + questionIndex).style.display = "block";
-        } else {
-          showResult();
+
+ if (questionIndex <= 10) {
+   document.getElementById("question" + questionIndex).style.display = "block";
+ } else {
+   showResult();
         }
       }
 
