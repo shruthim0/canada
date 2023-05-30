@@ -101,33 +101,33 @@ title: College
       <h2>College Finder</h2>
       <div id="question1">
         <p>How big do you want your school to be?</p>
-        <button onclick="answer('small')">Small (less than 5,000 students)</button>
-        <button onclick="answer('medium')">Medium (5,000-15,000 students)</button>
-        <button onclick="answer('large')">Large (more than 15,000 students)</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('small')">Small (less than 5,000 students)</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('medium')">Medium (5,000-15,000 students)</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('large')">Large (more than 15,000 students)</button>
       </div>
       <div id="question2" style="display: none">
         <p>Which location do you prefer?</p>
-        <button onclick="answer('urban')">Urban</button>
-        <button onclick="answer('suburban')">Suburban</button>
-        <button onclick="answer('rural')">Rural</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('urban')">Urban</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('suburban')">Suburban</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('rural')">Rural</button>
       </div>
       <div id="question3" style="display: none">
         <p>How prestigious do you want your school to be?</p>
-        <button onclick="answer('notprestigious')">Not very prestigious</button>
-        <button onclick="answer('semiprestigious')">Semi-prestigious</button>
-        <button onclick="answer('veryprestigious')">Very prestigious</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('notprestigious')">Not very prestigious</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('semiprestigious')">Semi-prestigious</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('veryprestigious')">Very prestigious</button>
       </div>
       <div id="question4" style="display: none">
         <p>What do you prefer?</p>
-        <button onclick="answer('beach')">The beach</button>
-        <button onclick="answer('forest')">The forest</button>
-        <button onclick="answer('mountains')">The mountains</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('beach')">The beach</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('forest')">The forest</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('mountains')">The mountains</button>
       </div>
       <div id="question5" style="display: none">
         <p>How good do you want the sports to be?</p>
-        <button onclick="answer('verygood')">Very good (high D1)</button>
-        <button onclick="answer('good')">Good (Low D1-D2)</button>
-        <button onclick="answer('notgood')">Sports do not matter to me much (D3)</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('verygood')">Very good (high D1)</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('good')">Good (Low D1-D2)</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('notgood')">Sports do not matter to me much (D3)</button>
       </div>
       <div id="question6" style="display: none">
         <p>What do you want to study?</p>
@@ -168,27 +168,27 @@ title: College
       </div>
       <div id="question7" style="display: none">
         <p>Do you want to live in a college town?</p>
-        <button onclick="answer('collegetown')">Yes</button>
-        <button onclick="answer('nocollegetown')">No</button>
-        <button onclick="answer('maybecollegetown')">Doesn't matter</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('collegetown')">Yes</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('nocollegetown')">No</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('maybecollegetown')">Doesn't matter</button>
       </div>
       <div id="question8" style="display: none">
         <p>Do you want on-campus housing?</p>
-        <button onclick="answer('oncampus')">Yes</button>
-        <button onclick="answer('offcampus')">No</button>
-        <button onclick="answer('nopreference')">I don't have a preference</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('oncampus')">Yes</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('offcampus')">No</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('nopreference')">I don't have a preference</button>
       </div>
       <div id="question9" style="display: none">
         <p>Do you want to engage in Greek Life?</p>
-        <button onclick="answer('greeklife')">Yes</button>
-        <button onclick="answer('nogreeklife')">No</button>
-        <button onclick="answer('maybegreeklife')">Maybe</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('greeklife')">Yes</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('nogreeklife')">No</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('maybegreeklife')">Maybe</button>
       </div>
       <div id="question10" style="display: none">
         <p>How much money are you willing to pay?</p>
-        <button onclick="answer('bigmoney')">Money is not an issue</button>
-        <button onclick="answer('midmoney')">I am willing to pay quite a bit (30,000-50,000)</button>
-        <button onclick="answer('lowmoney')">Cheapest possible (Less than $30,000)</button>
+        <button onclick="increaseScore([0, 3, 8])"onclick="answer('bigmoney')">Money is not an issue</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('midmoney')">I am willing to pay quite a bit (30,000-50,000)</button>
+        <button onclick="increaseScore([0, 3, 8])" onclick="answer('lowmoney')">Cheapest possible (Less than $30,000)</button>
         <button onclick="submitScores()">Submit</button>
       </div>
       </div>
