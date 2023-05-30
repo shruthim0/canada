@@ -204,42 +204,28 @@ title: College
 
         // Function to move to the next question
         function moveToNextQuestion() {
-            const currentQuestion = getCurrentQuestion();
-            const nextQuestion = document.getElementById("question" + (currentQuestion + 1));
-            const currentQuestionDiv = document.getElementById("question" + currentQuestion);
+    const currentQuestion = getCurrentQuestion();
+    const nextQuestion = document.getElementById("question" + (currentQuestion + 1));
+    const currentQuestionDiv = document.getElementById("question" + currentQuestion);
 
-            if (nextQuestion) {
-                currentQuestionDiv.style.display = "none";
-                nextQuestion.style.display = "block";
-            } else {
-                submitScores();
-            }
+    if (nextQuestion) {
+        currentQuestionDiv.style.display = "none";
+        nextQuestion.style.display = "block";
+    } else {
+        const submitButton = document.getElementById("submit");
+        submitButton.style.display = "block";
+    }
+}
+
+// Function to get the index of the current question
+function getCurrentQuestion() {
+    for (let i = 1; i <= 10; i++) {
+        if (document.getElementById("question" + i).style.display !== "none") {
+            return i;
         }
-
-        // Function to get the index of the current question
-        function getCurrentQuestion() {
-            for (let i = 1; i <= 10; i++) {
-                if (document.getElementById("question" + i).style.display !== "none") {
-                    return i;
-                }
-            }
-            return -1;
-        }
-
-        // Function to reset the questions and scores
-        function resetQuestions() {
-            for (let i = 0; i < ucSchools.length; i++) {
-                ucSchools[i].score = 0;
-                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
-            }
-
-            for (let i = 1; i <= 10; i++) {
-                const question = document.getElementById("question" + i);
-                question.style.display = "none";
-            }
-
-            document.getElementById("question1").style.display = "block";
-        }
+    }
+    return -1;
+}
     </script>
 </body>
 </html>
