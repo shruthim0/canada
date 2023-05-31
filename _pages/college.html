@@ -222,8 +222,7 @@ title: College
     <table id="scoreTable" style="display: none;">
         <thead>
             <tr>
-                <th>Rank</th>
-<th>School Name</th>
+                <th id="rankHeader">Rank</th>
             </tr>
         </thead>
         <tbody>
@@ -313,26 +312,17 @@ title: College
 
         // Function to submit the scores and update the table
         function submitScores() {
-  // Sort the ucSchools array based on scores in descending order
-  ucSchools.sort((a, b) => b.score - a.score);
+  ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
 
-  // Update the table with the sorted scores and ranks
-  var table = document.getElementById("resultTable");
-  var tbody = table.getElementsByTagName("tbody")[0];
-  tbody.innerHTML = "";
-
-  // Iterate over the sorted ucSchools array and update the table rows
-  for (var i = 0; i < ucSchools.length; i++) {
-    var rank = i + 1;
-    var school = ucSchools[i];
-
-    var row = tbody.insertRow(i);
-    var rankCell = row.insertCell(0);
-    var schoolCell = row.insertCell(1);
-
-    rankCell.textContent = rank + ".";
-    schoolCell.textContent = school.name;
+  for (let i = 0; i < ucSchools.length; i++) {
+    const rank = i + 1;
+    document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+    document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
+    document.getElementById("rank" + (i + 1)).textContent = rank; // Set the rank
   }
+
+  document.getElementById("rankHeader").textContent = "Rank"; // Show the first column header as "Rank"
+  document.getElementById("scoreTable").style.display = "table"; // Display the score table
 }
     </script>
 
