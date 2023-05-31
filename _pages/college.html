@@ -36,7 +36,7 @@ title: College
             margin-bottom: 10px;
             font-size: 16px;
             border: none;
-            background-color: #4CAF50;
+            background-color: #0a23c5;
             color: white;
             cursor: pointer;
             transition: background-color 0.3s;
@@ -66,7 +66,7 @@ title: College
         }
     
         th {
-            background-color: #4CAF50;
+            background-color: #0a23c5;
             color: white;
         }
     
@@ -90,7 +90,7 @@ title: College
         }
     
         #scoreTable th {
-            background-color: #4CAF50;
+            background-color: #0a23c5;
             color: white;
         }
     
@@ -210,7 +210,6 @@ title: College
         <tr>
             <th>Rank</th>
             <th id="rankHeader">UC School</th>
-            <th>UC School</th>
             <th>Score</th>
         </tr>
         <tr id="school1">
@@ -298,18 +297,19 @@ title: College
 
         // Function to submit the scores and update the table
         function submitScores() {
-            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+    ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
 
-            for (let i = 0; i < ucSchools.length; i++) {
-                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
-                document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
-            }
+    for (let i = 0; i < ucSchools.length; i++) {
+        document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+        document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
+        document.getElementById("rank" + (i + 1)).textContent = i + 1; // Update rank numbers
+    }
 
-            document.getElementById("rankHeader").textContent = "Rank"; // Show the first column header as "Rank"
-            document.getElementById("submitBtn").disabled = true; // Disable the submit button after scores are submitted
+    document.getElementById("rankHeader").textContent = "Rank"; // Show the first column header as "Rank"
+    document.getElementById("submitBtn").disabled = true; // Disable the submit button after scores are submitted
 
-            document.getElementById("scoreTable").style.display = "table"; // Display the table with updated rankings
-        }
+    document.getElementById("scoreTable").style.display = "table"; // Display the table with updated rankings
+}
     </script>
 
 </body>
