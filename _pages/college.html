@@ -122,37 +122,37 @@ title: College
     <div class="container" data-aos="fade-middle">
         <h1>College Finder</h1>
         <div id="question1">
-            <p>How big do you want your school to be?</p>
+            <h2>How big do you want your school to be?</h2>
             <button onclick="increaseScore([4, 7, 9]); showNextQuestion('question2')">Small (less than 20,000 students)</button>
             <button onclick="increaseScore([3, 5, 8]); showNextQuestion('question2')">Medium (20,000-30,000 students)</button>
             <button onclick="increaseScore([0, 2, 3, 6]); showNextQuestion('question2')">Large (more than 30,000 students)</button>
         </div>
         <div id="question2" style="display: none">
-            <p>Which location do you prefer?</p>
+            <h2>Which location do you prefer?</h2>
             <button onclick="increaseScore([0, 3, 6, 7]); showNextQuestion('question3')">Urban</button>
             <button onclick="increaseScore([1, 2, 5, 8, 9]); showNextQuestion('question3')">Suburban</button>
             <button onclick="increaseScore([4]); showNextQuestion('question3')">Rural</button>
         </div>
         <div id="question3" style="display: none">
-            <p>How prestigious do you want your school to be?</p>
+            <h2>How prestigious do you want your school to be?</h2>
             <button onclick="increaseScore([4, 5, 7]); showNextQuestion('question4')">Not very prestigious</button>
             <button onclick="increaseScore([1, 6, 9]); showNextQuestion('question4')">Semi-prestigious</button>
             <button onclick="increaseScore([0, 2, 3, 8]); showNextQuestion('question4')">Very prestigious</button>
         </div>
         <div id="question4" style="display: none">
-            <p>What do you prefer?</p>
+            <h2>What do you prefer?</h2>
             <button onclick="increaseScore([6, 8, 3]); showNextQuestion('question5')">The beach</button>
             <button onclick="increaseScore([9, 5]); showNextQuestion('question5')">The forest</button>
             <button onclick="increaseScore([0, 1, 4, 2, 7]); showNextQuestion('question5')">The mountains</button>
         </div>
         <div id="question5" style="display: none">
-            <p>How good do you want the sports to be?</p>
+            <h2>How good do you want the sports to be?</h2>
             <button onclick="increaseScore([0, 3, 8, 6]); showNextQuestion('question6')">Very good (high D1)</button>
             <button onclick="increaseScore([1, 2, 5]); showNextQuestion('question6')">Good (Low D1-D2)</button>
             <button onclick="increaseScore([7, 9, 4]); showNextQuestion('question6')">Sports do not matter to me much (D3)</button>
         </div>
         <div id="question6" style="display: none">
-            <p>What do you want to study?</p>
+            <h2>What do you want to study?</h2>
             <select id="major">
                 <option value="accounting">Accounting</option>
                 <option value="architecture">Architecture</option>
@@ -189,25 +189,25 @@ title: College
             <button onclick="increaseScore([]); showNextQuestion('question7')">Submit</button>
         </div>
         <div id="question7" style="display: none">
-            <p>Do you want to live in a college town?</p>
+            <h2>Do you want to live in a college town?</h2>
             <button onclick="increaseScore([1]); showNextQuestion('question8')">Yes</button>
             <button onclick="increaseScore([]); showNextQuestion('question8')">No</button>
             <button onclick="increaseScore([]); showNextQuestion('question8')">Doesn't matter</button>
         </div>
         <div id="question8" style="display: none">
-            <p>Do you want on-campus housing?</p>
+            <h2>Do you want on-campus housing?</h2>
             <button onclick="increaseScore([8, 6, 1]); showNextQuestion('question9')">Yes</button>
             <button onclick="increaseScore([0, 2, 9, 3]); showNextQuestion('question9')">No</button>
             <button onclick="increaseScore([5, 7, 4]); showNextQuestion('question9')">I don't have a preference</button>
         </div>
         <div id="question9" style="display: none">
-            <p>Do you want to engage in Greek Life?</p>
+            <h2>Do you want to engage in Greek Life?</h2>
             <button onclick="increaseScore([0, 1, 8, 3]); showNextQuestion('question10')">Yes</button>
             <button onclick="increaseScore([5, 4, 7]); showNextQuestion('question10')">No</button>
             <button onclick="increaseScore([6, 9, 2]); showNextQuestion('question10')">Maybe</button>
         </div>
         <div id="question10" style="display: none">
-            <p>How much money are you willing to pay?</p>
+            <h2>How much money are you willing to pay?</h2>
             <button onclick="increaseScore([3, 0, 6, 8]); showNextQuestion('question11')">Money is not an issue</button>
             <button onclick="increaseScore([1, 2, 9]); showNextQuestion('question11')">I am willing to pay quite a bit </button>
             <button onclick="increaseScore([5, 4, 7]); showNextQuestion('question11')">Cheapest possible </button>
