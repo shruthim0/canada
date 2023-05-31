@@ -208,7 +208,8 @@ title: College
     
     <table id="scoreTable" style="display: none;">
         <tr>
-            <th id="rankHeader">Rank</th>
+            <th>Rank</th>
+            <th id="rankHeader">UC School</th>
             <th>UC School</th>
             <th>Score</th>
         </tr>
@@ -264,52 +265,52 @@ title: College
         </tr>
     </table>
     <script>
-    // Array of UC Schools
-    var ucSchools = [
-        { name: "UC Berkeley", score: 0 },
-        { name: "UC Davis", score: 0 },
-        { name: "UC Irvine", score: 0 },
-        { name: "UC Los Angeles", score: 0 },
-        { name: "UC Merced", score: 0 },
-        { name: "UC Riverside", score: 0 },
-        { name: "UC San Diego", score: 0 },
-        { name: "UC San Francisco", score: 0 },
-        { name: "UC Santa Barbara", score: 0 },
-        { name: "UC Santa Cruz", score: 0 }
-    ];
+        // Array of UC Schools
+        var ucSchools = [
+            { name: "UC Berkeley", score: 0 },
+            { name: "UC Davis", score: 0 },
+            { name: "UC Irvine", score: 0 },
+            { name: "UC Los Angeles", score: 0 },
+            { name: "UC Merced", score: 0 },
+            { name: "UC Riverside", score: 0 },
+            { name: "UC San Diego", score: 0 },
+            { name: "UC San Francisco", score: 0 },
+            { name: "UC Santa Barbara", score: 0 },
+            { name: "UC Santa Cruz", score: 0 }
+        ];
 
-    var currentQuestionIndex = 1;
+        var currentQuestionIndex = 1;
 
-    function showNextQuestion(nextQuestionId) {
-        document.getElementById("question" + currentQuestionIndex).style.display = "none";
-        document.getElementById(nextQuestionId).style.display = "block";
-        currentQuestionIndex++;
-    }
-
-    // Function to increase the score of the specified UC Schools
-    function increaseScore(indices) {
-        for (let i = 0; i < indices.length; i++) {
-            const index = indices[i];
-            ucSchools[index].score++;
-            document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
-        }
-    }
-
-    // Function to submit the scores and update the table
-    function submitScores() {
-        ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
-
-        for (let i = 0; i < ucSchools.length; i++) {
-            document.getElementById("rank" + (i + 1)).textContent = (i + 1); // Display the rank number
-            document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
-            document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
+        function showNextQuestion(nextQuestionId) {
+            document.getElementById("question" + currentQuestionIndex).style.display = "none";
+            document.getElementById(nextQuestionId).style.display = "block";
+            currentQuestionIndex++;
         }
 
-        document.getElementById("rankHeader").textContent = "Rank"; // Show the first column header as "Rank"
-        document.getElementById("submitBtn").disabled = true; // Disable the submit button after scores are submitted
+        // Function to increase the score of the specified UC Schools
+        function increaseScore(indices) {
+            for (let i = 0; i < indices.length; i++) {
+                const index = indices[i];
+                ucSchools[index].score++;
+                document.getElementById("score" + (index + 1)).textContent = ucSchools[index].score;
+            }
+        }
 
-        document.getElementById("scoreTable").style.display = "table"; // Display the table with updated rankings
-    }
-</script>
+        // Function to submit the scores and update the table
+        function submitScores() {
+            ucSchools.sort((a, b) => b.score - a.score); // Sort UC Schools by score in descending order
+
+            for (let i = 0; i < ucSchools.length; i++) {
+                document.getElementById("score" + (i + 1)).textContent = ucSchools[i].score;
+                document.getElementById("school" + (i + 1)).textContent = ucSchools[i].name; // Update school names
+            }
+
+            document.getElementById("rankHeader").textContent = "Rank"; // Show the first column header as "Rank"
+            document.getElementById("submitBtn").disabled = true; // Disable the submit button after scores are submitted
+
+            document.getElementById("scoreTable").style.display = "table"; // Display the table with updated rankings
+        }
+    </script>
+
 </body>
 </html>
